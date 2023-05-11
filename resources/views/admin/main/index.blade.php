@@ -16,7 +16,7 @@
                 </li>
                 <li><i class='bx bx-chevron-right' ></i></li>
                 <li>
-                    <a class="active" href="{{ route('main.index') }}">Головна</a>
+                    <a class="active" href="{{ route('admin.main.index') }}">Головна</a>
                 </li>
             </ul>
         </div>

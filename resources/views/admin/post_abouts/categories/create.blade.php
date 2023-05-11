@@ -26,10 +26,12 @@
     <div class="row">
         <div class="col-12" style="margin-top: 20px;">
             <h2>Створення категорії</h2>
-            <form action="#" class="topBefore w-25" style="margin-top: 20px;">
-                <input type="text"  placeholder="Назва категорії">
-
-
+            <form action="{{ route('admin.About_us.categories.store') }}" method="POST" class="topBefore w-25" style="margin-top: 20px;">
+                @csrf
+                <input type="text" name="title"  placeholder="Назва категорії">
+                @error('title')
+                <div class="text-danger">Це поле необхідно заповнити </div>
+                @enderror
                 <input id="submit" type="submit" value="Додати">
             </form>
         </div>
