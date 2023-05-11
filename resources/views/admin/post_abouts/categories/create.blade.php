@@ -3,9 +3,7 @@
     <!-- MAIN -->
 <main>
     <style>
-        #content main{
-            background-image:url({{ asset ('img/bg-footer.jpg')}});
-        }
+
     </style>
     <div class="head-title">
         <div class="left">
@@ -23,21 +21,35 @@
 
 
     </div>
-    <div class="row">
-        <div class="col-12" style="margin-top: 20px;">
-            <h2>Створення категорії</h2>
-            <form action="{{ route('admin.About_us.categories.store') }}" method="POST" class="topBefore w-25" style="margin-top: 20px;">
-                @csrf
-                <input type="text" name="title"  placeholder="Назва категорії">
-                @error('title')
-                <div class="text-danger">Це поле необхідно заповнити </div>
-                @enderror
-                <input id="submit" type="submit" value="Додати">
-            </form>
-        </div>
+
+
+    <!-- FORM-->
+    <div style="margin-top: 200px;"></div>
+    <div class="login-box">
+        <h2>Створення категорії</h2>
+        <form action="{{ route('admin.About_us.categories.store') }}" method="POST">
+            @csrf
+            <div class="user-box">
+                <input type="text" name="title" >
+                <label>Назва категорії</label>
+            </div>
+            @error('title')
+            <div class="text__error__category">Це поле необхідно заповнити </div>
+            @enderror
+
+            <button type="submit">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                Створити
+            </button>
+        </form>
     </div>
 
-    <div style="margin-bottom: 200px;"></div>
+
+    <!--End-Form-->
+
 
 </main>
     <!-- MAIN -->

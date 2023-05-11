@@ -3,9 +3,7 @@
     <!-- MAIN -->
 <main>
     <style>
-        #content main{
-            background-image:url({{ asset ('img/bg-footer.jpg')}});
-        }
+
     </style>
     <div class="head-title">
         <div class="left">
