@@ -32,6 +32,7 @@
                     <tr>
                         <th>ID</th>
                         <th>Назва</th>
+                        <th colspan="2">Дія</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -39,6 +40,8 @@
                     <tr>
                         <td>{{ $category->id }}</td>
                         <td>{{ $category->title }}</td>
+                        <td><a href="{{ route('admin.About_us.categories.show', $category->id) }}"><i class="fa-solid fa-eye" style="color: #024bca;"></i></a> </td>
+                        <td><a href="{{ route('admin.About_us.categories.edit', $category->id) }}"><i class="fa-solid fa-pencil" style="color: #024bca;"></i></a> </td>
                     </tr>
                     @endforeach
 
@@ -51,5 +54,6 @@
     <div style="margin-bottom: 200px;"></div>
 
 </main>
+
     <!-- MAIN -->
 @endsection
