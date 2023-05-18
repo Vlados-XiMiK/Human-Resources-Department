@@ -32,7 +32,7 @@
                     <tr>
                         <th>ID</th>
                         <th>Назва</th>
-                        <th colspan="2">Дія</th>
+                        <th colspan="3">Дія</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -42,6 +42,17 @@
                         <td>{{ $category->title }}</td>
                         <td><a href="{{ route('admin.About_us.categories.show', $category->id) }}"><i class="fa-solid fa-eye" style="color: #024bca;"></i></a> </td>
                         <td><a href="{{ route('admin.About_us.categories.edit', $category->id) }}"><i class="fa-solid fa-pencil" style="color: #024bca;"></i></a> </td>
+                        <td>
+                            <form action="{{ route('admin.About_us.categories.delete', $category->id) }}" method="Post">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" style="border-radius: 0; border-color: transparent">
+                                    <i class="fa-solid fa-trash-can" style="color: red"></i>
+                                </button>
+
+                            </form>
+
+                        </td>
                     </tr>
                     @endforeach
 

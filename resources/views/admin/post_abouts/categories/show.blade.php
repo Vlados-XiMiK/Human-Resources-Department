@@ -7,10 +7,10 @@
         </style>
         <div class="head-title">
             <div class="left">
-                <h1>Про нас</h1>
+                <h1>{{ $category->title }}</h1>
                 <ul class="breadcrumb">
                     <li>
-                        <a href="">{{ $category->title }}</a>
+                        <a href="">Про нас</a>
                     </li>
 
                     <li><i class='bx bx-chevron-right' ></i></li>
@@ -33,13 +33,23 @@
 
                             <tr>
                                 <td>ID</td>
-                                <td colspan="2">{{ $category->id }}</td>
+                                <td colspan="3">{{ $category->id }}</td>
 
                             </tr>
                             <tr>
                                 <td>Назва</td>
                                 <td>{{ $category->title }}</td>
                                 <td><a href="{{ route('admin.About_us.categories.edit', $category->id) }}"><i class="fa-solid fa-pencil" style="color: #024bca;"></i></a></td>
+                                <td>
+                                    <form action="{{ route('admin.About_us.categories.delete', $category->id) }}" method="Post">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" style="border-radius: 0; border-color: transparent">
+                                            <i class="fa-solid fa-trash-can" style="color: red"></i>
+                                        </button>
+
+                                    </form>
+                                </td>
 
                             </tr>
 
