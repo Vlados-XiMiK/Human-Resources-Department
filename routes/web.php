@@ -44,6 +44,15 @@ Route::group(['namespace' => 'App\Http\Controllers\Admin', 'prefix' => 'admin'],
         Route::patch('/{category}','UpdateCategoryController') -> name('admin.About_us.categories.update');
         Route::delete('/{category}','DeleteCategoryController') -> name('admin.About_us.categories.delete');
     });
+    Route::group(['namespace' => 'Vacancy', 'prefix' => 'vacancy'], function () {
+        Route::get('/','IndexController') -> name('admin.Vacancy.index');
+        Route::get('/create','CreateCategoryController') -> name('admin.Vacancy.categories.create');
+        Route::post('/','StoreCategoryController') -> name('admin.Vacancy.categories.store');
+        Route::get('/{category_job}','ShowCategoryController') -> name('admin.Vacancy.categories.show');
+        Route::get('/{category_job}/edit','EditCategoryController') -> name('admin.Vacancy.categories.edit');
+        Route::patch('/{category_job}','UpdateCategoryController') -> name('admin.Vacancy.categories.update');
+        Route::delete('/{category_job}','DeleteCategoryController') -> name('admin.Vacancy.categories.delete');
+    });
 });
 
 

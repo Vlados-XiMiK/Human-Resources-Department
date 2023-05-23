@@ -4,10 +4,13 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class CategoryJob extends Model
 {
     use HasFactory;
-    protected $table = 'categories';
+    use SoftDeletes;
+
+    protected $table = 'category_jobs';
     protected $guarded = false;
 }

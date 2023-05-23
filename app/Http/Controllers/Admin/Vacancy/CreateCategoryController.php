@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Admin\About_us;
+namespace App\Http\Controllers\Admin\Vacancy;
 
 use App\Http\Controllers\Controller;
 
@@ -10,6 +10,6 @@ class CreateCategoryController extends Controller
 {
     public function __invoke()
     {
-        return view('admin.post_abouts.category.create');
+        return view('admin.vacancy.category.create');
     }
 }

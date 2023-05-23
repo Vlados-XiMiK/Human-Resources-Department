@@ -1,12 +1,12 @@
 <ul class="side-menu top">
-    <li class="active">
+    <li >
         <a href="{{ route('admin.main.index') }}">
             <i class='bx bxs-dashboard' ></i>
             <span class="text">Основна панель</span>
         </a>
     </li>
     <li>
-        <a href="#">
+        <a href="{{ route('admin.Vacancy.index') }}">
             <i class='bx bxs-shopping-bag-alt' ></i>
             <span class="text">Вакансії</span>
         </a>

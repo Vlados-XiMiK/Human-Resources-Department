@@ -11,6 +11,6 @@ class EditCategoryController extends Controller
 {
     public function __invoke(Category $category)
     {
-        return view('admin.post_abouts.categories.edit', compact('category'));
+        return view('admin.post_abouts.category.edit', compact('category'));
     }
 }
