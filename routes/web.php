@@ -29,6 +29,8 @@ Route::group(['namespace' => 'App\Http\Controllers\Main'], function () {
 
 Route::group(['namespace' => 'App\Http\Controllers\Main'], function () {
     Route::get('/contact','ContactPageController');
+    Route::post('/','CreateContactController') -> name('main.store');
+
 });
 
 Route::group(['namespace' => 'App\Http\Controllers\Admin', 'prefix' => 'admin'], function () {
@@ -54,6 +56,9 @@ Route::group(['namespace' => 'App\Http\Controllers\Admin', 'prefix' => 'admin'],
         Route::delete('/{category_job}','DeleteCategoryController') -> name('admin.Vacancy.categories.delete');
     });
 });
+
+
+
 
 
 

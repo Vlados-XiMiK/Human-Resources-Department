@@ -26,7 +26,7 @@
     <li>
         <a href="#">
             <i class='bx bxs-message-dots' ></i>
-            <span class="text">Довідка</span>
+            <span class="text">Вхідні повідомлення</span>
         </a>
     </li>
 </ul>

@@ -12,7 +12,8 @@
         <div class="main-block__container _container">
             <div class="main-block__body">
                 <h1 class="main-block__title">Зв'язок з нами</h1>
-                <section class="edica-contact py-5 mb-5">
+                <form action="{{ route('main.store') }}" class="edica-contact py-5 mb-5" method="POST">
+                    @csrf
                     <div class="row">
                         <div class="col-md-8 contact-form-wrapper">
                             <h5 class="contact__name" data-aos="fade-up">Форма для зв'язку</h5>
@@ -23,23 +24,23 @@
                                 </div>
                                 <div class="form-group col-md-6" data-aos="fade-up">
                                     <label for="phone">Номер телефону</label>
-                                    <input type="text" class="form-control" id="phone" name="phone" placeholder="Номер телефону">
+                                    <input type="text" class="form-control" id="phone" name="number" placeholder="Номер телефону">
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="form-group col-md-6" data-aos="fade-up" data-aos-delay="100">
                                     <label for="email">Електронна пошта</label>
-                                    <input type="email" class="form-control" id="email" name="email" placeholder="example.gmail.com">
+                                    <input type="email" class="form-control" id="email" name="mail" placeholder="example.gmail.com">
                                 </div>
                                 <div class="form-group col-md-6" data-aos="fade-up" data-aos-delay="100">
                                     <label for="subject">Тема</label>
-                                    <input type="text" class="form-control" id="subject" name="subject" placeholder="Тема повідомлення">
+                                    <input type="text" class="form-control" id="subject" name="title" placeholder="Тема повідомлення">
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="form-group col-12" data-aos="fade-up" data-aos-delay="200">
                                     <label for="message">Повідомлення</label>
-                                    <div class="testing"><textarea name="message" id="message" class="form-control" placeholder="Вітаю. Що вас турбує?"></textarea></div>
+                                    <div class="testing"><textarea name="content" id="message" class="form-control" placeholder="Вітаю. Що вас турбує?"></textarea></div>
                                 </div>
                             </div>
                             <button type="submit" class="btn btn-warning btn-lg" data-aos="fade-up" data-aos-delay="300">Відправити повідомлення</button>
@@ -57,7 +58,7 @@
                             </div>
                         </div>
                     </div>
-                </section>
+                </form>
             </div>
         </div>
 @endsection
