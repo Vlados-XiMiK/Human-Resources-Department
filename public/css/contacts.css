@@ -107,10 +107,10 @@ h6 {
     box-sizing: content-box;
 }
 ._ibg{
-  position: relative; 
+  position: relative;
 }
 ._ibg img{
-  position: absolute; 
+  position: absolute;
   width: 100%;
   height: 100%;
   top: 0;
@@ -208,7 +208,7 @@ padding: 5px 0;
   display: flex;
 }
 .menu__item{
-  
+
 }
 .menu__item:not(:last-child){
   margin: 0px 21px 0px 0px;
@@ -293,12 +293,12 @@ padding: 5px 0;
 @media (max-width: 540px){
   .login{
     font-size: 10px;
-  
+
   }
   .menu__link{
     width: 200px;
     height: 30px;
-    
+
   }
 
 }
@@ -494,7 +494,7 @@ padding: 5px 0;
 display: flex;
 }
 .footer-menu__item{
- 
+
 }
 .footer-menu__item:not(:last-child){
   margin: 0px 10px 0px 0px;
@@ -702,7 +702,7 @@ label {
   display: flex;
   flex-wrap: wrap;
   margin: 0 -5px;
-  
+
 }
 
 .form-group {
@@ -711,7 +711,7 @@ label {
   margin-bottom: 19px;
   margin-left: 40px;
   flex-grow: 1;
-  
+
 }
 
 .form-control {
@@ -727,9 +727,19 @@ label {
 }
 
 .form-group textarea {
-  min-height: 150px;
+  min-height: 300px;
   margin-top: 8px;
   width: 100%;
+    padding: 15px;
+    outline: none;
+    resize: none;
+    font-size: 20px;
+    margin-top: 20px;
+    border-radius: 5px;
+    border-color: #bfbfbf;
+}
+textarea:is(:focus,:valid){
+    border-color: #4671EA;
 }
 
 .btn-warning {
@@ -740,12 +750,12 @@ label {
   font-size: 18px;
   font-weight: 700;
   background-color: #f29431;
-  border-color: #f29431; 
+  border-color: #f29431;
 }
 .btn-warning:hover {
   color: #fff;
   background-color: #ee810f;
-  border-color: #e27b0e; 
+  border-color: #e27b0e;
 }
 
 .edica-contact .contact-form-wrapper .btn {
@@ -778,7 +788,7 @@ label {
   margin-bottom: 19px; }
 
 .edica-contact .contact-sidebar .contact-map {
-  margin-top: 53px; 
+  margin-top: 53px;
 }
 .map__iframes{
   border: 3px solid;
@@ -798,7 +808,7 @@ label {
   }
 }
 .main-block__image{
-  position: absolute; 
+  position: absolute;
   width: 100%;
   height: 100%;
   top: 0;

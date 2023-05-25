@@ -25,6 +25,7 @@
                     <form method="post">
                         <input type="text" placeholder="Ім'я" />
                         <input type="text" placeholder="Прізвище" />
+                        <input type="text" placeholder="Бажана вакансія" />
                         <input type="text" placeholder="Номер телефону" />
                         <div class="container_upload">
                             <div class="drop-area">

@@ -24,7 +24,7 @@
         </a>
     </li>
     <li>
-        <a href="#">
+        <a href="{{ route('admin.Contact.index') }}">
             <i class='bx bxs-message-dots' ></i>
             <span class="text">Вхідні повідомлення</span>
         </a>
