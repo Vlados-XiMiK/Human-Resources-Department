@@ -26,7 +26,7 @@
             <a href="{{ route('admin.About_us.categories.create') }}" class="about_us-btn" style="margin-top: 20px;">Створити категорію</a>
             <a href="{{ route('admin.post.create') }}" class="about_us-btn" style="margin-top: 20px;">Створити пост</a>
 
-
+<div style="display: flex; justify-content: space-around">
             <div class="table-responsive" style="align-items: center">
                 <h3 style="color: white; margin-top: 10px; text-align: center">Список категорій</h3>
                 <table class="table">
@@ -92,7 +92,7 @@
                     </tbody>
                 </table>
             </div>
-
+</div>
         </div>
     </div>
 
