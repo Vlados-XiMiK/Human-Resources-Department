@@ -37,6 +37,16 @@ Route::group(['namespace' => 'App\Http\Controllers\Admin', 'prefix' => 'admin'],
     Route::group(['namespace' => 'Main'], function () {
         Route::get('/','IndexController') -> name('admin.main.index');
     });
+
+    Route::group(['namespace' => 'Post', 'prefix' => 'post'], function () {
+        Route::get('/create','CreateController') -> name('admin.post.create');
+        Route::post('/','StoreController') -> name('admin.post.store');
+        Route::get('/{post}','ShowController') -> name('admin.post.show');
+        Route::get('/{post}/edit','EditController') -> name('admin.post.edit');
+        Route::patch('/{post}','UpdateController') -> name('admin.post.update');
+        Route::delete('/{post}','DeleteController') -> name('admin.post.delete');
+    });
+
     Route::group(['namespace' => 'About_us', 'prefix' => 'about_us'], function () {
         Route::get('/','IndexController') -> name('admin.About_us.index');
         Route::get('/create','CreateCategoryController') -> name('admin.About_us.categories.create');
@@ -46,6 +56,7 @@ Route::group(['namespace' => 'App\Http\Controllers\Admin', 'prefix' => 'admin'],
         Route::patch('/{category}','UpdateCategoryController') -> name('admin.About_us.categories.update');
         Route::delete('/{category}','DeleteCategoryController') -> name('admin.About_us.categories.delete');
     });
+
     Route::group(['namespace' => 'Vacancy', 'prefix' => 'vacancy'], function () {
         Route::get('/','IndexController') -> name('admin.Vacancy.index');
         Route::get('/create','CreateCategoryController') -> name('admin.Vacancy.categories.create');
@@ -55,6 +66,7 @@ Route::group(['namespace' => 'App\Http\Controllers\Admin', 'prefix' => 'admin'],
         Route::patch('/{category_job}','UpdateCategoryController') -> name('admin.Vacancy.categories.update');
         Route::delete('/{category_job}','DeleteCategoryController') -> name('admin.Vacancy.categories.delete');
     });
+
     Route::group(['namespace' => 'Contact', 'prefix' => 'contact'], function () {
         Route::get('/','IndexController') -> name('admin.Contact.index');
         Route::get('/{contact}','ShowController') -> name('admin.Contact.show');
