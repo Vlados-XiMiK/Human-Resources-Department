@@ -34,7 +34,7 @@
         <li>
             <i class='bx bxs-group' ></i>
             <span class="text">
-						<h3>2</h3>
+						<h3>{{ $messageCount }}</h3>
 						<p>Кількість вхідних повідомлень</p>
 					</span>
         </li>
