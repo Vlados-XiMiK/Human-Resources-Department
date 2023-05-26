@@ -35,14 +35,14 @@
                                 <td>ID</td>
                                 <td>ПІБ</td>
                                 <td colspan="2">Дія</td>
-                                <td>Категорія</td>
+                                
 
 
                             </tr>
                             <tr>
                                 <td>{{ $post->id }}</td>
                                 <td>{{ $post->title }}</td>
-                                <td><a href="{{ route('admin.About_us.categories.edit', $post->id) }}"><i class="fa-solid fa-pencil" style="color: #024bca;"></i></a></td>
+                                <td><a href="{{ route('admin.post.edit', $post->id) }}"><i class="fa-solid fa-pencil" style="color: #024bca;"></i></a></td>
                                 <td>
                                     <form action="{{ route('admin.post.delete', $post->id) }}" method="POST" id="deleteForm{{ $post->id }}">
                                         @csrf
@@ -52,18 +52,7 @@
                                         </button>
                                     </form>
                                 </td>
-                                <td>
-                                    <span class="custom-dropdown big">
 
-                <select name="category_id" disabled>
-                    @foreach($categories as $category)
-                        <option value="{{ $category->id }}"
-                                {{ $category->id == $post->category_id ? 'selected' : '' }}
-                        >{{ $category->title }}</option>
-                    @endforeach
-                </select>
-            </span>
-                                </td>
 
                             </tr>
 
