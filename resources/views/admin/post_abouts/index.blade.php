@@ -75,10 +75,10 @@
                         <tr>
                             <td>{{ $post->id }}</td>
                             <td>{{ $post->title }}</td>
-                            <td><a href="{{ route('admin.About_us.categories.show', $post->id) }}"><i class="fa-solid fa-eye" style="color: #024bca;"></i></a> </td>
-                            <td><a href="{{ route('admin.About_us.categories.edit', $post->id) }}"><i class="fa-solid fa-pencil" style="color: #024bca;"></i></a> </td>
+                            <td><a href="{{ route('admin.post.show', $post->id) }}"><i class="fa-solid fa-eye" style="color: #024bca;"></i></a> </td>
+                            <td><a href="{{ route('admin.post.edit', $post->id) }}"><i class="fa-solid fa-pencil" style="color: #024bca;"></i></a> </td>
                             <td>
-                                <form action="{{ route('admin.About_us.categories.delete', $post->id) }}" method="POST" id="deleteForm{{ $post->id }}">
+                                <form action="{{ route('admin.post.delete', $post->id) }}" method="POST" id="deleteForm{{ $post->id }}">
                                     @csrf
                                     @method('DELETE')
                                     <button type="button" style="border-radius: 0; border-color: transparent" onclick="confirmDelete('{{ $post->id }}')">
