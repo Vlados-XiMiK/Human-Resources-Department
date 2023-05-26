@@ -27,7 +27,7 @@
     <div style="margin-top: 200px;"></div>
     <div class="login-box">
         <h2>Створення поста</h2>
-        <form action="{{ route('admin.post.store') }}" method="POST">
+        <form action="{{ route('admin.post.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="user-box">
                 <input type="text" name="title" >
@@ -36,6 +36,16 @@
             @error('title')
             <div class="text__error__category">Це поле необхідно заповнити </div>
             @enderror
+            <div class="container_upload">
+                <div class="drop-area">
+                    <i class="bx bxs-cloud-upload icon"></i>
+                    <h3>
+                        Перетягніть або клацніть тут, щоб вибрати фото
+                    </h3>
+                    <p>Розмір фото має бути менше ніж <span>2MB</span></p>
+                    <input type="file" accept="image/*" id="input-file" name="main_image" />
+                </div>
+            </div>
 
 
             <button type="submit">
@@ -53,5 +63,6 @@
 
 
 </main>
+    <script src=" {{ asset('js/upload-image.js') }} "></script>
     <!-- MAIN -->
 @endsection

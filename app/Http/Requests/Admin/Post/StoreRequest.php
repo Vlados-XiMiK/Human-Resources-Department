@@ -23,6 +23,8 @@ class StoreRequest extends FormRequest
     {
         return [
             'title' => 'required|string',
+            'main_image' => 'required|file',
+
         ];
     }
 }

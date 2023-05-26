@@ -527,6 +527,74 @@ body {
 
 }
 
+/* UPLOAD IMAGE */
+.container_upload {
+    padding: 10px;
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.drop-area {
+    background: #eee;
+
+    width: 330px;
+    height: 100px;
+    padding: 0px;
+    border-radius: 10px;
+    text-align: center;
+    color: #999;
+    cursor: pointer;
+    border: 2px dashed #ccc;
+    position: relative;
+    overflow: hidden;
+}
+
+.icon {
+    font-size: 30px;
+    margin-bottom: 5px;
+}
+.drop-area h3 {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    pointer-events: none;
+}
+.drop-area p {
+    font-size: 10px;
+    color: #999;
+}
+p span {
+    font-weight: 600;
+}
+.thumbnail,
+.img-name {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+.thumbnail {
+    object-fit: cover;
+    z-index: 100;
+}
+.img-name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #080808;
+    font-weight: 500;
+    padding: 16px;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 200;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+.drop-area:hover .img-name {
+    opacity: 1;
+}
+
 @media (max-width: 1000px) {
 
     .table-3 tr{
