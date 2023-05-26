@@ -12,6 +12,7 @@ class ShowController extends Controller
 {
     public function __invoke(PostAbout $post)
     {
-        return view('admin.post_abouts.post.show', compact('post'));
+        $categories = Category::all();
+        return view('admin.post_abouts.post.show', compact('post', 'categories'));
     }
 }

@@ -45,10 +45,10 @@
                             <td><a href="{{ route('admin.About_us.categories.show', $category->id) }}"><i class="fa-solid fa-eye" style="color: #024bca;"></i></a> </td>
                             <td><a href="{{ route('admin.About_us.categories.edit', $category->id) }}"><i class="fa-solid fa-pencil" style="color: #024bca;"></i></a> </td>
                             <td>
-                                <form action="{{ route('admin.About_us.categories.delete', $category->id) }}" method="POST" id="deleteForm{{ $category->id }}">
+                                <form action="{{ route('admin.About_us.categories.delete', $category->id) }}" method="POST">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="button" style="border-radius: 0; border-color: transparent" onclick="confirmDelete('{{ $category->id }}')">
+                                    <button type="submit" style="border-radius: 0; border-color: transparent">
                                         <i class="fa-solid fa-trash-can" style="color: red"></i>
                                     </button>
                                 </form>
@@ -58,53 +58,48 @@
 
                     </tbody>
                 </table>
+
             </div>
 
-            <div class="table-responsive" >
-                <h3 style="color: white; margin-top: 10px; text-align: center">Список постів</h3>
-                <table class="table">
-                    <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>ПІБ</th>
-                        <th colspan="3">Дія</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    @foreach($posts as $post)
-                        <tr>
-                            <td>{{ $post->id }}</td>
-                            <td>{{ $post->title }}</td>
-                            <td><a href="{{ route('admin.post.show', $post->id) }}"><i class="fa-solid fa-eye" style="color: #024bca;"></i></a> </td>
-                            <td><a href="{{ route('admin.post.edit', $post->id) }}"><i class="fa-solid fa-pencil" style="color: #024bca;"></i></a> </td>
-                            <td>
-                                <form action="{{ route('admin.post.delete', $post->id) }}" method="POST" id="deleteForm{{ $post->id }}">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="button" style="border-radius: 0; border-color: transparent" onclick="confirmDelete('{{ $post->id }}')">
-                                        <i class="fa-solid fa-trash-can" style="color: red"></i>
-                                    </button>
-                                </form>
-                            </td>
-                        </tr>
-                    @endforeach
 
-                    </tbody>
-                </table>
-            </div>
-</div>
-        </div>
+    <div class="table-responsive">
+        <h3 style="color: white; margin-top: 10px; text-align: center">Список постів</h3>
+        <table class="table">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>ПІБ</th>
+                <th colspan="3">Дія</th>
+            </tr>
+            </thead>
+            <tbody>
+            @foreach($posts as $post)
+                <tr>
+                    <td>{{ $post->id }}</td>
+                    <td>{{ $post->title }}</td>
+                    <td><a href="{{ route('admin.post.show', $post->id) }}"><i class="fa-solid fa-eye" style="color: #024bca;"></i></a></td>
+                    <td><a href="{{ route('admin.post.edit', $post->id) }}"><i class="fa-solid fa-pencil" style="color: #024bca;"></i></a></td>
+                    <td>
+                        <form action="{{ route('admin.post.delete', $post->id) }}" method="POST" id="deleteForm{{ $post->id }}">
+                            @csrf
+                            @method('DELETE')
+                            <button type="button" style="border-radius: 0; border-color: transparent" onclick="Delete('{{ $post->id }}')">
+                                <i class="fa-solid fa-trash-can" style="color: red"></i>
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+            @endforeach
+            </tbody>
+        </table>
     </div>
 
-    <div style="margin-bottom: 200px;"></div>
-
-</main>
-
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
-        function confirmDelete(categoryId) {
+        function Delete(postId) {
             Swal.fire({
                 title: "Ви впевнені?",
-                text: "Ви хочете видалити цю категорію?",
+                text: "Ви хочете видалити цей пост?",
                 icon: "warning",
                 showCancelButton: true,
                 confirmButtonColor: "#d33",
@@ -113,10 +108,20 @@
                 cancelButtonText: "Відмінити"
             }).then((result) => {
                 if (result.isConfirmed) {
-                    document.getElementById('deleteForm' + categoryId).submit();
+                    document.getElementById('deleteForm' + postId).submit();
                 }
             });
         }
     </script>
+
+</div>
+        </div>
+    </div>
+
+    <div style="margin-bottom: 200px;"></div>
+
+</main>
+
+
     <!-- MAIN -->
 @endsection
