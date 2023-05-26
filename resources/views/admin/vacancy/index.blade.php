@@ -24,6 +24,8 @@
     <div class="row">
         <div class="col-12">
             <a href="{{ route('admin.Vacancy.categories.create') }}" class="about_us-btn" style="margin-top: 20px;">Створити категорію</a>
+            <a href="{{ route('admin.Vacancy.categories.create') }}" class="about_us-btn" style="margin-top: 20px;">Створити пост вакансії</a>
+            <a href="{{ route('admin.Vacancy.categories.create') }}" class="about_us-btn" style="margin-top: 20px;">Список постів</a>
 
 
             <div class="table-responsive">

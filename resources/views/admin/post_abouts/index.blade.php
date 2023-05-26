@@ -24,6 +24,8 @@
     <div class="row">
         <div class="col-12">
             <a href="{{ route('admin.About_us.categories.create') }}" class="about_us-btn" style="margin-top: 20px;">Створити категорію</a>
+            <a href="#" class="about_us-btn" style="margin-top: 20px;">Створити пост</a>
+            <a href="#" class="about_us-btn" style="margin-top: 20px;">Список постів</a>
 
 
             <div class="table-responsive">

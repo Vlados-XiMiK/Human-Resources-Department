@@ -1,6 +1,11 @@
 @extends('layouts.main')
 @section('links')
     <link rel="stylesheet" href="{{ asset('css/contacts.css') }}" type="text/css"/>
+    <!-- Подключение стилей SweetAlert -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.17/dist/sweetalert2.min.css">
+
+    <!-- Подключение скрипта SweetAlert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.17/dist/sweetalert2.min.js"></script>
 @endsection
 
 @section('title')
@@ -58,7 +63,13 @@
                                     @enderror
                                 </div>
                             </div>
-                            <button type="submit" class="btn btn-warning btn-lg" data-aos="fade-up" data-aos-delay="300">Відправити повідомлення</button>
+                            <button type="submit" class="btn btn-warning btn-lg" data-aos="fade-up" data-aos-delay="300">
+                                Відправити повідомлення</button>
+                            @if(session('success'))
+                                <script>
+                                    Swal.fire('Успіх', '{{ session('success') }}', 'success');
+                                </script>
+                            @endif
                         </div>
                         <div class="col-md-4 contact-sidebar" data-aos="fade-left">
                             <h5>Контакти</h5>

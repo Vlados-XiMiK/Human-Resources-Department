@@ -14,6 +14,7 @@ class CreateContactController extends Controller
     {
         $data = $request->validated();
         Contact::firstOrCreate($data);
-        return view('main.contact');
+        return redirect()->back()->with('success', 'Повідомлення успішно надіслано.');
+
     }
 }

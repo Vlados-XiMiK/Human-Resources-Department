@@ -10,6 +10,7 @@
     <!-- My CSS -->
     <link rel="stylesheet" href="{{ asset('css/admin/style.css') }}">
     <script src="https://kit.fontawesome.com/c802f53a5e.js" crossorigin="anonymous"></script>
+    @yield('links')
     <title>Панель Адміністрування</title>
 </head>
 <body>
