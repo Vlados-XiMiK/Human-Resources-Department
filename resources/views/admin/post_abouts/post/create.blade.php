@@ -10,7 +10,7 @@
             <h1>Про нас</h1>
             <ul class="breadcrumb">
                 <li>
-                    <a href="#">Про нас</a>
+                    <a class="active" href="{{ route('admin.About_us.index') }}">Про нас</a>
                 </li>
                 <li><i class='bx bx-chevron-right' ></i></li>
                 <li>
@@ -31,11 +31,12 @@
             @csrf
             <div class="user-box">
                 <input type="text" name="title" >
-                <label>Назва поста</label>
+                <label>Введіть ПІБ доданої людини</label>
             </div>
             @error('title')
             <div class="text__error__category">Це поле необхідно заповнити </div>
             @enderror
+
 
             <button type="submit">
                 <span></span>

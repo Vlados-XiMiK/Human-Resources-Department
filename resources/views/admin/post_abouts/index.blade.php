@@ -28,7 +28,7 @@
 
 
             <div class="table-responsive" style="align-items: center">
-                <h3 style="color: white; margin-top: 10px; text-align: center"">Список категорій</h3>
+                <h3 style="color: white; margin-top: 10px; text-align: center">Список категорій</h3>
                 <table class="table">
                     <thead>
                     <tr>
@@ -66,7 +66,7 @@
                     <thead>
                     <tr>
                         <th>ID</th>
-                        <th>Назва</th>
+                        <th>ПІБ</th>
                         <th colspan="3">Дія</th>
                     </tr>
                     </thead>
