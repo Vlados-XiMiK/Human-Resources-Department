@@ -39,23 +39,21 @@
                     </thead>
                     <tbody>
                     @foreach($categories as $category)
-                    <tr>
-                        <td>{{ $category->id }}</td>
-                        <td>{{ $category->title }}</td>
-                        <td><a href="{{ route('admin.About_us.categories.show', $category->id) }}"><i class="fa-solid fa-eye" style="color: #024bca;"></i></a> </td>
-                        <td><a href="{{ route('admin.About_us.categories.edit', $category->id) }}"><i class="fa-solid fa-pencil" style="color: #024bca;"></i></a> </td>
-                        <td>
-                            <form action="{{ route('admin.About_us.categories.delete', $category->id) }}" method="Post">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" style="border-radius: 0; border-color: transparent">
-                                    <i class="fa-solid fa-trash-can" style="color: red"></i>
-                                </button>
-
-                            </form>
-
-                        </td>
-                    </tr>
+                        <tr>
+                            <td>{{ $category->id }}</td>
+                            <td>{{ $category->title }}</td>
+                            <td><a href="{{ route('admin.About_us.categories.show', $category->id) }}"><i class="fa-solid fa-eye" style="color: #024bca;"></i></a> </td>
+                            <td><a href="{{ route('admin.About_us.categories.edit', $category->id) }}"><i class="fa-solid fa-pencil" style="color: #024bca;"></i></a> </td>
+                            <td>
+                                <form action="{{ route('admin.About_us.categories.delete', $category->id) }}" method="POST" id="deleteForm{{ $category->id }}">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="button" style="border-radius: 0; border-color: transparent" onclick="confirmDelete('{{ $category->id }}')">
+                                        <i class="fa-solid fa-trash-can" style="color: red"></i>
+                                    </button>
+                                </form>
+                            </td>
+                        </tr>
                     @endforeach
 
                     </tbody>
@@ -68,5 +66,23 @@
 
 </main>
 
+    <script>
+        function confirmDelete(categoryId) {
+            Swal.fire({
+                title: "Ви впевнені?",
+                text: "Ви хочете видалити цю категорію?",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#d33",
+                cancelButtonColor: "#3085d6",
+                confirmButtonText: "Видалити",
+                cancelButtonText: "Відмінити"
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    document.getElementById('deleteForm' + categoryId).submit();
+                }
+            });
+        }
+    </script>
     <!-- MAIN -->
 @endsection

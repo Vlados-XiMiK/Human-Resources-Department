@@ -1,11 +1,5 @@
 @extends('admin.layouts.main')
-@section('links')
-    <!-- Подключение стилей SweetAlert -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.17/dist/sweetalert2.min.css">
 
-    <!-- Подключение скрипта SweetAlert -->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.17/dist/sweetalert2.min.js"></script>
-@endsection
 @section('content')
     <!-- MAIN -->
 <main>
@@ -46,26 +40,25 @@
                     </thead>
                     <tbody>
                     @foreach($contacts as $contact)
-                    <tr>
-                        <td>{{ $contact->id }}</td>
-                        <td>{{ $contact->name }}</td>
-                        <td>{{ $contact->number }}</td>
-                        <td>{{ $contact->mail }}</td>
-                        <td>{{ $contact->title }}</td>
-                        <td><a href="{{ route('admin.Contact.show', $contact->id) }}"><i class="fa-solid fa-eye" style="color: #024bca;"></i></a></td>
-                        <td>
-                            <form action="{{ route('admin.Contact.delete', $contact->id) }}" method="POST">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" style="border-radius: 0; border-color: transparent">
-                                    <i class="fa-solid fa-trash-can" style="color: red"></i>
-                                </button>
+                        <tr>
+                            <td>{{ $contact->id }}</td>
+                            <td>{{ $contact->name }}</td>
+                            <td>{{ $contact->number }}</td>
+                            <td>{{ $contact->mail }}</td>
+                            <td>{{ $contact->title }}</td>
+                            <td><a href="{{ route('admin.Contact.show', $contact->id) }}"><i class="fa-solid fa-eye" style="color: #024bca;"></i></a></td>
+                            <td>
+                                <form id="deleteForm{{ $contact->id }}" action="{{ route('admin.Contact.delete', $contact->id) }}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="button" style="border-radius: 0; border-color: transparent" onclick="confirmDelete({{ $contact->id }})">
+                                        <i class="fa-solid fa-trash-can" style="color: red"></i>
+                                    </button>
 
-                            </form>
+                                </form>
+                            </td>
 
-                        </td>
-
-                    </tr>
+                        </tr>
                     @endforeach
 
                     </tbody>
@@ -78,5 +71,24 @@
 
 </main>
 
-    <!-- MAIN -->
+    <!-- Доданий JavaScript-код -->
+    <script>
+        function confirmDelete(contactId) {
+            Swal.fire({
+                title: 'Ви впевнені?',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#d33',
+                cancelButtonColor: '#3085d6',
+                confirmButtonText:'Видалити',
+                cancelButtonText:'Відмінити',
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    // Якщо користувач підтверджує видалення
+                    // Надсилаємо запит на видалення форми
+                    document.getElementById('deleteForm' + contactId).submit();
+                }
+            });
+        }
+    </script>
 @endsection

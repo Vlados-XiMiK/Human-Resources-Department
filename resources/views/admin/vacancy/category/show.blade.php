@@ -10,7 +10,7 @@
                 <h1>{{ $category_job->title }}</h1>
                 <ul class="breadcrumb">
                     <li>
-                        <a href="">Вакансії</a>
+                        <a class="active" href="{{ route('admin.Vacancy.index') }}">Вакансії</a>
                     </li>
 
                     <li><i class='bx bx-chevron-right' ></i></li>
@@ -41,13 +41,12 @@
                                 <td>{{ $category_job->title }}</td>
                                 <td><a href="{{ route('admin.Vacancy.categories.edit', $category_job->id) }}"><i class="fa-solid fa-pencil" style="color: #024bca;"></i></a></td>
                                 <td>
-                                    <form action="{{ route('admin.Vacancy.categories.delete', $category_job->id) }}" method="Post">
+                                    <form action="{{ route('admin.Vacancy.categories.delete', $category_job->id) }}" method="POST" id="deleteForm{{ $category_job->id }}">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit" style="border-radius: 0; border-color: transparent">
+                                        <button type="button" style="border-radius: 0; border-color: transparent" onclick="confirmDelete('{{ $category_job->id }}')">
                                             <i class="fa-solid fa-trash-can" style="color: red"></i>
                                         </button>
-
                                     </form>
                                 </td>
 
@@ -65,5 +64,23 @@
 
     </main>
 
+    <script>
+        function confirmDelete(category_jobId) {
+            Swal.fire({
+                title: "Ви впевнені?",
+                text: "Ви хочете видалити цю категорію вакансій?",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#d33",
+                cancelButtonColor: "#3085d6",
+                confirmButtonText: "Видалити",
+                cancelButtonText: "Відмінити"
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    document.getElementById('deleteForm' + category_jobId).submit();
+                }
+            });
+        }
+    </script>
     <!-- MAIN -->
 @endsection
