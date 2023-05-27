@@ -7,10 +7,10 @@
         </style>
         <div class="head-title">
             <div class="left">
-                <h1>{{ $post->title }}</h1>
+                <h1>Інформація про пост</h1>
                 <ul class="breadcrumb">
                     <li>
-                        <a href="">Про нас</a>
+                        <a class="active" href="{{ route('admin.About_us.index') }}">Про нас</a>
                     </li>
 
                     <li><i class='bx bx-chevron-right' ></i></li>
@@ -34,14 +34,19 @@
                             <tr>
                                 <td>ID</td>
                                 <td>ПІБ</td>
+                                <td>Категорія</td>
                                 <td colspan="2">Дія</td>
-                                
+
 
 
                             </tr>
                             <tr>
                                 <td>{{ $post->id }}</td>
                                 <td>{{ $post->title }}</td>
+                                <td>
+                                    {{ $post->category->title }}
+                                </td>
+
                                 <td><a href="{{ route('admin.post.edit', $post->id) }}"><i class="fa-solid fa-pencil" style="color: #024bca;"></i></a></td>
                                 <td>
                                     <form action="{{ route('admin.post.delete', $post->id) }}" method="POST" id="deleteForm{{ $post->id }}">
@@ -62,6 +67,8 @@
                         <div class="w-25" style="display: flex; margin-top: 0px; flex-direction: column; justify-content: center; align-items: center; ">
                             <h2 style="color: white; text-align: center; justify-content: center;">Фото користувача: <br> {{ $post->title }}</h2>
                             <img src="{{ url('storage/' . $post->main_image) }}" alt="main_image" style="width: 300px; height: 300px;">
+
+
                         </div>
                     </table>
 

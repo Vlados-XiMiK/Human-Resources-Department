@@ -12,4 +12,9 @@ class PostAbout extends Model
     use SoftDeletes;
     protected $table = 'post_abouts';
     protected $guarded = false;
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
 }
