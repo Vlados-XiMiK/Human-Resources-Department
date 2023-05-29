@@ -61,34 +61,37 @@
             <div class="form-box">
 
                 <div class="form-value">
-                    <form action="">
+                    <form action="{{ route('admin.job.store') }}" method="POST" enctype="multipart/form-data">
+                        @csrf
                         <h2>Створення вакансії</h2>
 
                         <div class="formWrapper">
                             <div class="formLeft">
                                 <div class="inputbox">
 
-                                    <input type="text">
+                                    <input type="text" name="title">
                                     <label for="">Введіть назву Вакансії</label>
                                 </div>
+                                @error('title')
+                                <div class="text__error__category">Це поле необхідно заповнити</div>
+                                @enderror
 
                                 <div class="redactor">
-
-
-                                                <div class="editor">
-
+                                    <textarea class="editor" name="content" ></textarea>
                                 </div>
-
-                                </div>
+                                @error('content')
+                                <div class="text__error__category">Це поле необхідно заповнити</div>
+                                @enderror
 
                             </div>
                             <div class="formRight">
                                 <div class="selectbox">
-                                    <select class="form-select" id="category" name="category">
-                                        <option value="">Оберіть категорію</option>
-                                        <option value="category1">Категория 1</option>
-                                        <option value="category2">Категория 2</option>
-                                        <option value="category3">Категория 3</option>
+                                    <select class="form-select" id="category" name="category_id" required>
+                                        @foreach($category_jobs as $category_job)
+                                        <option value="{{ $category_job->id }}"
+                                                {{ $category_job->id == old('$category_job->id') ? ' selected' : '' }}
+                                        >{{ $category_job->title }}</option>
+                                        @endforeach
                                     </select>
                                 </div>
                                 <div class="inputimagebox">
@@ -99,12 +102,15 @@
                                                 Перетягніть або клацніть тут, щоб вибрати фото
                                             </h3>
                                             <p>Розмір фото має бути менше ніж <span>2MB</span></p>
-                                            <input type="file" accept="image/*" id="input-file" name="main_image"
+                                            <input type="file" accept="image/*" id="input-file" name="preview_image"
                                                    class="input-image"/>
                                         </label>
                                     </div>
+                                    @error('preview_image')
+                                    <div class="text__error__category">Це поле необхідно заповнити</div>
+                                    @enderror
                                 </div>
-                                <button>Створити</button>
+                                <button type="submit">Створити</button>
 
                             </div>
                         </div>

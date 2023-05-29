@@ -15,11 +15,11 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->text('content');
-            $table->unsignedBigInteger('category_job_id')->nullable();
+            $table->unsignedBigInteger('category_id')->nullable();
             $table->timestamps();
 
-            $table->index('category_job_id', 'job_category_job_idx');
-            $table->foreign('category_job_id','job_category_job_fk')->on('category_jobs')->references('id');
+            $table->index('category_id', 'job_category_job_idx');
+            $table->foreign('category_id','job_category_job_fk')->on('category_jobs')->references('id');
         });
     }
 

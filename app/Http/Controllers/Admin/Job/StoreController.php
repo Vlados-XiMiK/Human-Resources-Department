@@ -14,9 +14,10 @@ class StoreController extends Controller
     public function __invoke(StoreRequest $request)
     {
         $data = $request->validated();
-        $data['main_image'] = Storage::disk('public')->put('/images', $data['main_image']);
+        $data['preview_image'] = Storage::put('/images', $data['preview_image']);
+
         Job::firstOrCreate($data);
 
-        return redirect()->route('admin.job.index');
+        return redirect()->route('admin.Vacancy.index');
     }
 }
