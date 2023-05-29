@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+
+section {
+    justify-content: center;
+    align-items: center;
+
+}
+
+.form-box {
+    position: relative;
+    width: 1000px;
+    height: 550px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    backdrop-filter: blur(15px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    left: 200px;
+}
+
+.form-select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #ffffff;
+    color: #000000;
+    opacity: 1;
+    cursor: not-allowed;
+}
+
+h2 {
+    font-size: 2em;
+    color: #fff;
+    text-align: center;
+}
+
+.inputbox {
+    position: relative;
+    margin: 30px 0;
+    width: 310px;
+    border-bottom: 2px solid #fff;
+}
+
+.selectbox {
+    position: relative;
+    margin: 30px 0;
+    width: 310px;
+}
+
+.inputimagebox {
+    position: relative;
+    margin: 30px 0;
+    width: 310px;
+}
+
+.inputbox label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    color: #fff;
+    font-size: 1em;
+    pointer-events: none;
+    transition: .5s;
+}
+
+input:focus ~ label,
+input:valid ~ label {
+    top: -5px;
+}
+
+.inputbox input {
+    width: 100%;
+    height: 50px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    padding: 0 35px 0 5px;
+    color: #fff;
+}
+
+.inputbox ion-icon {
+    position: absolute;
+    right: 8px;
+    color: #fff;
+    font-size: 1.2em;
+    top: 20px;
+}
+
+.forget {
+    margin: -15px 0 15px;
+    font-size: .9em;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+}
+
+.forget label input {
+    margin-right: 3px;
+
+}
+
+.forget label a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.forget label a:hover {
+    text-decoration: underline;
+}
+
+.button {
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    width: 100%;
+    height: 40px;
+    border-radius: 40px;
+    background: #fff;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+    line-height: 40px;
+}
+
+/* ************************Вставка фото************************ */
+.container_upload {
+    padding: 10px;
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.drop-area {
+    background: #eee;
+
+    width: 330px;
+    height: 80px;
+    padding: 0px;
+    border-radius: 10px;
+    text-align: center;
+    color: #999;
+    cursor: pointer;
+    border: 2px dashed #ccc;
+    position: relative;
+    overflow: hidden;
+}
+
+.icon {
+    font-size: 30px;
+    margin-bottom: 5px;
+}
+
+.drop-area h3 {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    pointer-events: none;
+}
+
+.drop-area p {
+    font-size: 10px;
+    color: #999;
+}
+
+p span {
+    font-weight: 600;
+}
+
+.thumbnail,
+.img-name {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.thumbnail {
+    object-fit: cover;
+    z-index: 100;
+}
+
+.img-name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #080808;
+    font-weight: 500;
+    padding: 16px;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 200;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.drop-area:hover .img-name {
+    opacity: 1;
+}
+
+
+/**************************************************************************************************/
+
+
+/*****************************************************************/
+
+.formWrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.imageStyle {
+    width: 250px;
+    height: 250px;
+}
+
+.rightSide {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.leftSide {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-right: 50px;
+    margin-top: 50px;
+}

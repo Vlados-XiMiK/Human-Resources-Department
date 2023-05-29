@@ -1,4 +1,8 @@
 @extends('admin.layouts.main')
+@section('links')
+    <link rel="stylesheet" href="{{ asset('css/admin/info_post.css') }}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+@endsection
 @section('content')
     <!-- MAIN -->
     <main>
@@ -23,7 +27,7 @@
 
 
         </div>
-        <div class="row">
+       <!-- <div class="row">
             <div class="col-12">
 
                 <div class="table-responsive" style="display: flex; justify-content: space-around; margin-top: 20px">
@@ -78,8 +82,41 @@
 
             </div>
         </div>
+-->
 
-        <div style="margin-bottom: 200px;"></div>
+        <section>
+            <div class="form-box">
+                <form action="">
+                    <h2>Інформація про пост</h2>
+                    <div class="formWrapper">
+                        <div class="leftSide">
+                            <img src="{{ url('storage/' . $post->main_image) }}" class="imageStyle">
+                        </div>
+                        <div class="rightSide">
+                            <div class="inputbox">
+                                <input type="text" value="{{ $post->title }}" class="placeholder-color" readonly>
+                            </div>
+
+                            <div class="selectbox">
+                                <select class="form-select" id="category" name="category" disabled>
+                                    <option value="">{{ $post->category->title }}</option>
+                                </select>
+                            </div>
+                            <a class="button" href="{{ route('admin.post.edit', $post->id) }}">Змінити пост</a>
+                            <form action="{{ route('admin.post.delete', $post->id) }}" method="POST" id="deleteForm{{ $post->id }}">
+                                @csrf
+                                @method('DELETE')
+                                <button type="button" style="margin-top: 20px;" class="button" onclick="Delete('{{ $post->id }}')">
+                                    Видалити пост
+                                </button>
+                            </form>
+
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+
 
     </main>
 
@@ -99,6 +136,11 @@
                     document.getElementById('deleteForm' + postId).submit();
                 }
             });
+        }
+    </script>
+    <script>
+        function redirectToEditPage(url) {
+            window.location.href = url;
         }
     </script>
     <!-- MAIN -->

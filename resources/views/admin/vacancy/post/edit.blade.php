@@ -37,7 +37,7 @@
             @error('title')
             <div class="text__error__category">Це поле необхідно заповнити</div>
             @enderror
-            
+
 
                 <button type="submit">
                     <span></span>
