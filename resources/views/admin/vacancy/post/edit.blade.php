@@ -50,7 +50,7 @@
                                 <label for="">Введіть назву Вакансії</label>
                             </div>
                             @error('title')
-                            <div class="text__error__category">Це поле необхідно заповнити</div>
+                            <div class="text__error__category">{{ $message }}</div>
                             @enderror
 
                             <div class="redactor">
@@ -58,7 +58,7 @@
 
                             </div>
                             @error('content')
-                            <div class="text__error__category">Це поле необхідно заповнити</div>
+                            <div class="text__error__category">{{ $message }}</div>
                             @enderror
 
                         </div>
@@ -71,6 +71,9 @@
                                         >{{ $category_job->title }}</option>
                                     @endforeach
                                 </select>
+                                @error('category_id')
+                                <div class="text__error__category">{{ $message }}</div>
+                                @enderror
                             </div>
                                 <div class="preview__image" style="align-items: center; justify-content: center; display: flex">
                                     <img src="{{ url('storage/', $job->preview_image) }}" alt="preview_image" style="width: 150px; height: 150px">
@@ -89,7 +92,7 @@
                                     </label>
                                 </div>
                                 @error('preview_image')
-                                <div class="text__error__category">Це поле необхідно заповнити</div>
+                                <div class="text__error__category">{{ $message }}</div>
                                 @enderror
                             </div>
                             <button type="submit" class="button">Оновити</button>

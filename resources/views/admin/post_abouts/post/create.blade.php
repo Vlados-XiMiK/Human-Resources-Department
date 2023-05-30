@@ -34,7 +34,7 @@
                     <label>Введіть ПІБ доданої людини</label>
                 </div>
                 @error('title')
-                <div class="text__error__category">Це поле необхідно заповнити</div>
+                <div class="text__error__category">{{ $message }}</div>
                 @enderror
                 <div class="container_upload">
                     <div class="drop-area">
@@ -47,7 +47,7 @@
                     </div>
                 </div>
                 @error('main_image')
-                <div class="text__error__image" style="color: red">Необхідно вибрати фото</div>
+                <div class="text__error__image" style="color: red">{{ $message }}</div>
                 @enderror
                 <div class="label_category">
 
@@ -59,6 +59,9 @@
                         <option value="{{ $category->id }}">{{ $category->title }}</option>
                     @endforeach
                 </select>
+                        @error('category_id')
+                <div class="text__error__image" style="color: red">{{ $message }}</div>
+                @enderror
             </span>
 
 

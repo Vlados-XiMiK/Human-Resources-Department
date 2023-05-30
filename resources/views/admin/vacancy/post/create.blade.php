@@ -30,33 +30,6 @@
         </div>
 
 
-        <!-- FORM-->
-       <!-- <div style="margin-top: 200px;"></div>
-        <div class="login-box">
-            <h2>Створення вакансії</h2>
-            <form action="{{ route('admin.job.store') }}" method="POST" enctype="multipart/form-data">
-                @csrf
-                <div class="user-box">
-                    <input type="text" name="title">
-                    <label>Введіть назву вакансії</label>
-                </div>
-                @error('title')
-                <div class="text__error__category">Це поле необхідно заповнити</div>
-                @enderror
-
-                    <button type="submit">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        Створити
-                    </button>
-
-            </form>
-        </div>
--->
-        <!--End-Form-->
-
         <section>
             <div class="form-box">
 
@@ -73,14 +46,14 @@
                                     <label for="">Введіть назву Вакансії</label>
                                 </div>
                                 @error('title')
-                                <div class="text__error__category">Це поле необхідно заповнити</div>
+                                <div class="text__error__category">{{ $message }}</div>
                                 @enderror
 
                                 <div class="redactor">
                                     <textarea class="editor" name="content" ></textarea>
                                 </div>
                                 @error('content')
-                                <div class="text__error__category">Це поле необхідно заповнити</div>
+                                <div class="text__error__category">{{ $message }}</div>
                                 @enderror
 
                             </div>
@@ -93,6 +66,9 @@
                                         >{{ $category_job->title }}</option>
                                         @endforeach
                                     </select>
+                                    @error('category_id')
+                                    <div class="text__error__category">{{ $message }}</div>
+                                    @enderror
                                 </div>
                                 <div class="inputimagebox">
                                     <div class="container_upload">
@@ -107,7 +83,7 @@
                                         </label>
                                     </div>
                                     @error('preview_image')
-                                    <div class="text__error__category">Це поле необхідно заповнити</div>
+                                    <div class="text__error__category">{{ $message }}</div>
                                     @enderror
                                 </div>
                                 <button class="button" type="submit">Створити</button>
