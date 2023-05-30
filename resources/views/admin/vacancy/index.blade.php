@@ -46,10 +46,10 @@
                         <td><a href="{{ route('admin.Vacancy.categories.show', $category_job->id) }}"><i class="fa-solid fa-eye" style="color: #024bca;"></i></a> </td>
                         <td><a href="{{ route('admin.Vacancy.categories.edit', $category_job->id) }}"><i class="fa-solid fa-pencil" style="color: #024bca;"></i></a> </td>
                         <td>
-                            <form action="{{ route('admin.Vacancy.categories.delete', $category_job->id) }}" method="POST" id="deleteForm{{ $category_job->id }}">
+                            <form action="{{ route('admin.Vacancy.categories.delete', $category_job->id) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
-                                <button type="button" style="border-radius: 0; border-color: transparent" onclick="confirmDelete('{{ $category_job->id }}')">
+                                <button type="submit" style="border-radius: 0; border-color: transparent">
                                     <i class="fa-solid fa-trash-can" style="color: red"></i>
                                 </button>
                             </form>
@@ -77,10 +77,10 @@
                         <tr>
                             <td>{{ $job->id }}</td>
                             <td>{{ $job->title }}</td>
-                            <td><a href="{{ route('admin.Vacancy.categories.show', $job->id) }}"><i class="fa-solid fa-eye" style="color: #024bca;"></i></a> </td>
-                            <td><a href="{{ route('admin.Vacancy.categories.edit', $job->id) }}"><i class="fa-solid fa-pencil" style="color: #024bca;"></i></a> </td>
+                            <td><a href="{{ route('admin.job.show', $job->id) }}"><i class="fa-solid fa-eye" style="color: #024bca;"></i></a> </td>
+                            <td><a href="{{ route('admin.job.edit', $job->id) }}"><i class="fa-solid fa-pencil" style="color: #024bca;"></i></a> </td>
                             <td>
-                                <form action="{{ route('admin.Vacancy.categories.delete', $job->id) }}" method="POST" id="deleteForm{{ $job->id }}">
+                                <form action="{{ route('admin.job.delete', $job->id) }}" method="POST" id="deleteForm{{ $job->id }}">
                                     @csrf
                                     @method('DELETE')
                                     <button type="button" style="border-radius: 0; border-color: transparent" onclick="confirmDelete('{{ $job->id }}')">
@@ -107,7 +107,7 @@
         function confirmDelete(category_jobId) {
             Swal.fire({
                 title: "Ви впевнені?",
-                text: "Ви хочете видалити цю категорію вакансій?",
+                text: "Ви хочете видалити цю вакансію?",
                 icon: "warning",
                 showCancelButton: true,
                 confirmButtonColor: "#d33",

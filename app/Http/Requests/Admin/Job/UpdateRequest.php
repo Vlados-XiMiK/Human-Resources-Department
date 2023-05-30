@@ -23,7 +23,9 @@ class UpdateRequest extends FormRequest
     {
         return [
             'title' => 'required|string',
-
+            'content' => 'required|string',
+            'preview_image' => 'nullable|file',
+            'category_id' => 'required|exists:category_jobs,id',
         ];
     }
 }

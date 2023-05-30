@@ -16,11 +16,7 @@ class UpdateController extends Controller
     public function __invoke(UpdateRequest $request,  Job $job)
     {
         $data = $request->validated();
-
-        if( array_key_exists('main_image',$data)){
-            $data['main_image'] = Storage::disk('public')->put('/images', $data['main_image']);
-        }
-
+        $data['preview_image'] = Storage::disk('public')->put('/images', $data['preview_image']);
         $job->update($data);
         return view('admin.vacancy.post.show', compact('job'));
     }

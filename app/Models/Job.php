@@ -10,11 +10,11 @@ class Job extends Model
 {
     use HasFactory;
     use SoftDeletes;
+
     protected $table = 'jobs';
     protected $guarded = false;
     public function category_job()
     {
-        return $this->belongsTo(CategoryJob::class);
+        return $this->belongsTo(CategoryJob::class, 'category_id');
     }
-
 }
