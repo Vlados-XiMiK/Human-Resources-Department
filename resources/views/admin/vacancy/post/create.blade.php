@@ -110,7 +110,7 @@
                                     <div class="text__error__category">Це поле необхідно заповнити</div>
                                     @enderror
                                 </div>
-                                <button type="submit">Створити</button>
+                                <button class="button" type="submit">Створити</button>
 
                             </div>
                         </div>

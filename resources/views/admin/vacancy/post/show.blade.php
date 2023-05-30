@@ -48,7 +48,7 @@
             <div class="form-box">
 
                 <div class="form-value">
-                    <form>
+                    <div>
                         <h2>Інформація про вакансію</h2>
 
                         <div class="formWrapper">
@@ -83,18 +83,18 @@
                                 <div class="inputimagebox">
 
                                 </div>
-                                <a class="button" href="{{ route('admin.job.edit', $job->id) }}">Змінити пост</a>
+                                <a class="button" href="{{ route('admin.job.edit', $job->id) }}">Змінити вакансію</a>
                                 <form action="{{ route('admin.job.delete', $job->id) }}" method="POST" id="deleteForm{{ $job->id }}">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="button" style="border-radius: 0; border-color: transparent" onclick="confirmDelete('{{ $job->id }}')">
-                                        <i class="fa-solid fa-trash-can" style="color: red"></i>
+                                    <button type="button" class="button" style="margin-top: 20px" onclick="Delete('{{ $job->id }}')">
+                                        Видалити вакансію
                                     </button>
                                 </form>
 
                             </div>
                         </div>
-                    </form>
+                    </div>
                 </div>
             </div>
         </section>

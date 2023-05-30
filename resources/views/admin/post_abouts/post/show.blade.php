@@ -30,7 +30,7 @@
 
         <section>
             <div class="form-box">
-                <form action="">
+                <div>
                     <h2>Інформація про пост</h2>
                     <div class="formWrapper">
                         <div class="leftSide">
