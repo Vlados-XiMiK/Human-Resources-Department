@@ -11,13 +11,13 @@ use App\Models\PostAbout;
 use Illuminate\Support\Facades\Storage;
 
 
-class UpdateController extends Controller
+class UpdateController extends BaseController
 {
     public function __invoke(UpdateRequest $request,  Job $job)
     {
         $data = $request->validated();
-        $data['preview_image'] = Storage::disk('public')->put('/images', $data['preview_image']);
-        $job->update($data);
+        $job = $this->service->update($data, $job);
+
         return view('admin.vacancy.post.show', compact('job'));
     }
 }

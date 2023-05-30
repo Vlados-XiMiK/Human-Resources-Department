@@ -8,7 +8,7 @@ use App\Models\CategoryJob;
 use App\Models\Job;
 use Illuminate\Http\Request;
 
-class EditController extends Controller
+class EditController extends BaseController
 {
     public function __invoke(Job $job)
     {

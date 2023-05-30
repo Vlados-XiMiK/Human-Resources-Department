@@ -7,7 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Job;
 
 
-class DeleteController extends Controller
+class DeleteController extends BaseController
 {
     public function __invoke(Job $job)
     {
