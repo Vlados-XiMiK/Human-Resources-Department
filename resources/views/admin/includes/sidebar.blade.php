@@ -18,7 +18,7 @@
         </a>
     </li>
     <li>
-        <a href="#">
+        <a href="{{ route('admin.user.index') }}">
             <i class='bx bxs-group' ></i>
             <span class="text">Користувачі</span>
         </a>
