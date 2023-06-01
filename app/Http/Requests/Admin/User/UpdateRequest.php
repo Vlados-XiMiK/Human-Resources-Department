@@ -22,7 +22,19 @@ class UpdateRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'title' => 'required|string'
+            'name' => 'required|string',
+            'email' => 'required|string|email|unique:users',
         ];
     }
+    public function messages()
+{
+    return [
+        'name.required'=> 'Це поле необхідно заповнити',
+        'name.string'=> 'Дані повинні відповідати рядковому типу',
+        'email.required'=> 'Це поле необхідно заповнити',
+        'email.string'=> 'Пошта повинна відповідати рядковому типу',
+        'email.email'=> 'Ваша пошта повинна відповідати формату mail@some.domen',
+        'email.unique'=> 'Користувач з такою поштою вже існує',
+];
+}
 }

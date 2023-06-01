@@ -7,7 +7,7 @@
         </style>
         <div class="head-title">
             <div class="left">
-                <h1>{{ $category_job->title }}</h1>
+                <h1>{{ $user->title }}</h1>
                 <ul class="breadcrumb">
                     <li>
                         <a class="active" href="{{ route('admin.Vacancy.index') }}">Вакансії</a>
@@ -33,18 +33,18 @@
 
                             <tr>
                                 <td>ID</td>
-                                <td colspan="3">{{ $category_job->id }}</td>
+                                <td colspan="3">{{ $user->id }}</td>
 
                             </tr>
                             <tr>
                                 <td>Назва</td>
-                                <td>{{ $category_job->title }}</td>
-                                <td><a href="{{ route('admin.Vacancy.categories.edit', $category_job->id) }}"><i class="fa-solid fa-pencil" style="color: #024bca;"></i></a></td>
+                                <td>{{ $user->title }}</td>
+                                <td><a href="{{ route('admin.Vacancy.categories.edit', $user->id) }}"><i class="fa-solid fa-pencil" style="color: #024bca;"></i></a></td>
                                 <td>
-                                    <form action="{{ route('admin.Vacancy.categories.delete', $category_job->id) }}" method="POST" id="deleteForm{{ $category_job->id }}">
+                                    <form action="{{ route('admin.Vacancy.categories.delete', $user->id) }}" method="POST" id="deleteForm{{ $user->id }}">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="button" style="border-radius: 0; border-color: transparent" onclick="confirmDelete('{{ $category_job->id }}')">
+                                        <button type="button" style="border-radius: 0; border-color: transparent" onclick="confirmDelete('{{ $user->id }}')">
                                             <i class="fa-solid fa-trash-can" style="color: red"></i>
                                         </button>
                                     </form>

@@ -34,7 +34,23 @@
                 <label>Логін користувача</label>
             </div>
             @error('name')
-            <div class="text__error__category">Це поле необхідно заповнити </div>
+            <div class="text__error__category">{{ $message }}</div>
+            @enderror
+
+            <div class="user-box">
+                <input type="text" name="email" >
+                <label>Електронна адреса</label>
+            </div>
+            @error('email')
+            <div class="text__error__category">{{ $message }}</div>
+            @enderror
+
+            <div class="user-box">
+                <input type="text" name="password" >
+                <label>Пароль</label>
+            </div>
+            @error('password')
+            <div class="text__error__category">{{ $message }}</div>
             @enderror
 
             <button type="submit">

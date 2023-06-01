@@ -42,10 +42,10 @@
                     <tr>
                         <td>{{ $user->id }}</td>
                         <td>{{ $user->name }}</td>
-                        <td><a href="{{ route('admin.Vacancy.categories.show', $user->id) }}"><i class="fa-solid fa-eye" style="color: #024bca;"></i></a> </td>
-                        <td><a href="{{ route('admin.Vacancy.categories.edit', $user->id) }}"><i class="fa-solid fa-pencil" style="color: #024bca;"></i></a> </td>
+                        <td><a href="{{ route('admin.user.show', $user->id) }}"><i class="fa-solid fa-eye" style="color: #024bca;"></i></a> </td>
+                        <td><a href="{{ route('admin.user.edit', $user->id) }}"><i class="fa-solid fa-pencil" style="color: #024bca;"></i></a> </td>
                         <td>
-                            <form action="{{ route('admin.Vacancy.categories.delete', $user->id) }}" method="POST">
+                            <form action="{{ route('admin.user.delete', $user->id) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" style="border-radius: 0; border-color: transparent">
