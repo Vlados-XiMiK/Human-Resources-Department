@@ -45,13 +45,7 @@
             <div class="text__error__category">{{ $message }}</div>
             @enderror
 
-            <div class="user-box">
-                <input type="text" name="password" >
-                <label>Пароль</label>
-            </div>
-            @error('password')
-            <div class="text__error__category">{{ $message }}</div>
-            @enderror
+
             <div class="label_category">
             <label style="margin-top: 20px">Оберіть роль</label>
             <span class="custom-dropdown big">
