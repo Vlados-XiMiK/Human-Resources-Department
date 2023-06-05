@@ -145,7 +145,25 @@ body {
 	transition: width .3s ease;
 }
 #sidebar .side-menu li a.logout {
-	color: var(--red);
+    color: var(--red);
+}
+.button_logout {
+    display: inline-flex;
+    align-items: center;
+    font-size: 20px;
+    font-family: monospace;
+    color: #fff;
+    background: linear-gradient(to left, #3a7bd5, #3a6073);
+    text-decoration: none;
+    padding: 5px 70px;
+    border-radius: 10px;
+    background-size: 200%;
+    transition: .5s;
+    line-height: 1;
+}
+
+.button_logout:hover {
+    background-position: right;
 }
 #sidebar .side-menu.top li a:hover {
 	color: var(--blue);

@@ -38,9 +38,12 @@
         </a>
     </li>
     <li>
-        <a href="#" class="logout">
-            <i class='bx bxs-log-out-circle' ></i>
-            <span class="text">Вийти</span>
-        </a>
+
+        <form href="#" class="logout" action="{{ route('logout') }}" style="margin-top: 400px" method="POST">
+            @csrf
+            <button class="button_logout" type="submit" value="Вийти">
+                <i class='bx bxs-log-out-circle' style="vertical-align: middle; margin-right: 2px"></i> Вийти
+            </button>
+        </form>
     </li>
 </ul>
