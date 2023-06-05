@@ -52,6 +52,21 @@
             @error('password')
             <div class="text__error__category">{{ $message }}</div>
             @enderror
+            <div class="label_category">
+            <label style="margin-top: 20px">Оберіть роль</label>
+            <span class="custom-dropdown big">
+                <select name="role">
+                    @foreach($roles as $id => $role)
+                        <option value="{{ $id }}"
+                        {{ $id == old('role_id') ? ' selected' : '' }}
+                        >{{ $role }}</option>
+                    @endforeach
+                </select>
+                        @error('role')
+                <div class="text__error__image" style="color: red">{{ $message }}</div>
+                @enderror
+            </span>
+
 
             <button type="submit">
                 <span></span>
@@ -60,6 +75,7 @@
                 <span></span>
                 Створити
             </button>
+            </div>
         </form>
     </div>
 

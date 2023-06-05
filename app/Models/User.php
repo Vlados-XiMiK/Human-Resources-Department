@@ -13,6 +13,19 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable, SoftDeletes;
 
+    const ROLE_READER = 0;
+    const ROLE_ADMIN = 1;
+
+
+
+    public static function getRoles() {
+        return [
+            self::ROLE_ADMIN => 'Адміністратор',
+            self::ROLE_READER => 'Користувач',
+        ];
+    }
+
+
     /**
      * The attributes that are mass assignable.
      *
@@ -22,6 +35,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'role',
     ];
 
     /**
