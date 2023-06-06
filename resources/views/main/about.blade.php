@@ -14,61 +14,18 @@
                 <h1 class="main-block__title">Про нас</h1>
                 <section class="about-posts-section">
                     <div class="row">
+                            @foreach($posts as $post)
+                        <div class="about-posts about-post" data-aos="fade-right">
+                            <div class="about-post-thumbnail-wrapper img__border">
+                                <img src="{{ 'storage/' . $post->main_image }}" alt="фото">
+                            </div>
+                            <p class="about-post-category">{{ $post->category->title }}</p>
+                            <a class="about-post-permalink">
+                                <h6 class="about-post-title">{{ $post->title }}</h6>
+                            </a>
+                        </div>
+                        @endforeach
 
-                        <div class="about-posts about-post" data-aos="fade-right">
-                            <div class="about-post-thumbnail-wrapper img__border">
-                                <img src="public/img/about/foto1.jpg" alt="blog post">
-                            </div>
-                            <p class="about-post-category">Ректор</p>
-                            <a class="about-post-permalink">
-                                <h6 class="about-post-title">Зеленський Володимир Олександрович</h6>
-                            </a>
-                        </div>
-                        <div class="about-posts about-post" data-aos="fade-right">
-                            <div class="about-post-thumbnail-wrapper img__border">
-                                <img src="public/img/about/foto2.jpg" alt="blog post">
-                            </div>
-                            <p class="about-post-category">Проректор</p>
-                            <a class="about-post-permalink">
-                                <h6 class="about-post-title">Залужний Валерій Федорович</h6>
-                            </a>
-                        </div>
-                        <div class="about-posts about-post" data-aos="fade-right">
-                            <div class="about-post-thumbnail-wrapper img__border">
-                                <img src="public/img/about/foto3.png" alt="blog post">
-                            </div>
-                            <p class="about-post-category">Декан</p>
-                            <a class="about-post-permalink">
-                                <h6 class="about-post-title">Шмигаль Денис Анатолійович</h6>
-                            </a>
-                        </div>
-                        <div class="about-posts about-post" data-aos="fade-right">
-                            <div class="about-post-thumbnail-wrapper img__border">
-                                <img src="public/img/about/foto4.jpg" alt="blog post">
-                            </div>
-                            <p class="about-post-category">Викладач</p>
-                            <a class="about-post-permalink">
-                                <h6 class="about-post-title">Гордон Дмитро Ілліч</h6>
-                            </a>
-                        </div>
-                        <div class="about-posts about-post" data-aos="fade-right">
-                            <div class="about-post-thumbnail-wrapper img__border">
-                                <img src="public/img/about/foto5.jpg" alt="blog post">
-                            </div>
-                            <p class="about-post-category">Викладач</p>
-                            <a class="about-post-permalink">
-                                <h6 class="about-post-title">Поворознюк Олександр Григорович</h6>
-                            </a>
-                        </div>
-                        <div class="about-posts about-post" data-aos="fade-right">
-                            <div class="about-post-thumbnail-wrapper img__border">
-                                <img src="public/img/about/foto6.jpg" alt="blog post">
-                            </div>
-                            <p class="about-post-category">Викладач</p>
-                            <a class="about-post-permalink">
-                                <h6 class="about-post-title">Порошенко Петро Олексійович</h6>
-                            </a>
-                        </div>
 
                     </div>
                 </section>
