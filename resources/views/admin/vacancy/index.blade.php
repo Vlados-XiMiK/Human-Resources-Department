@@ -39,7 +39,7 @@
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach($category_job as $category_job)
+                    @foreach($category_jobs as $category_job)
                     <tr>
                         <td>{{ $category_job->id }}</td>
                         <td>{{ $category_job->title }}</td>
@@ -73,7 +73,7 @@
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach($job as $job)
+                    @foreach($jobs as $job)
                         <tr>
                             <td>{{ $job->id }}</td>
                             <td>{{ $job->title }}</td>

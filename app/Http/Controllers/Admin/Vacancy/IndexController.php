@@ -13,8 +13,8 @@ class IndexController extends Controller
 {
     public function __invoke()
     {
-        $category_job = CategoryJob::all();
-        $job = Job::all();
-        return view('admin.vacancy.index', compact('category_job', 'job'));
+        $category_jobs = CategoryJob::all();
+        $jobs = Job::all();
+        return view('admin.vacancy.index', compact('category_jobs', 'jobs'));
     }
 }

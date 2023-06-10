@@ -49,8 +49,8 @@
         <input type="checkbox" id="switch-mode" hidden>
         <label for="switch-mode" class="switch-mode"></label>
 
-        <a href="#" class="profile">
-            <img src="{{ asset('img/people.png') }}">
+        <a href="{{ route('hello') }}" class="profile">
+            <img src="{{ asset('img/avatar.jpg') }}">
         </a>
     </nav>
     <!-- NAVBAR -->

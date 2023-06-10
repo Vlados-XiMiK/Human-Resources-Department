@@ -11,6 +11,6 @@ class ShowController extends Controller
 {
     public function __invoke(SendingJob $sendingJob)
     {
-        return view('admin.sending_job.show', compact('sendingJob'));
+        return view('admin.sending_job.show', compact('sendingJob', ));
     }
 }

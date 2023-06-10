@@ -19,10 +19,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::group(['namespace' => 'App\Http\Controllers\Main'], function () {
-    Route::get('/','IndexController');
+    Route::get('/','IndexController')->name('hello');
     Route::post('/send-job', 'CreateSendingJobController')->name('main.send_job');
 
 });
+
 
 
 Route::group(['namespace' => 'App\Http\Controllers\Main'], function () {
@@ -91,8 +92,9 @@ Route::group(['namespace' => 'App\Http\Controllers\Admin', 'prefix' => 'admin', 
 
     Route::group(['namespace' => 'SendingJob', 'prefix' => 'sendingJob'], function () {
         Route::get('/','IndexController') -> name('admin.sendingJob.index');
-        Route::get('/{contact}','ShowController') -> name('admin.sendingJob.show');
-        Route::delete('/{contact}','DeleteController') -> name('admin.sendingJob.delete');
+        Route::get('/sending-jobs/{id}/download', 'SendingJobController@download')->name('sending-jobs.download');
+        Route::get('/{sendingJob}','ShowController') -> name('admin.sendingJob.show');
+        Route::delete('/{sendingJob}','DeleteController') -> name('admin.sendingJob.delete');
 
     });
 

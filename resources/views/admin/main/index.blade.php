@@ -27,8 +27,8 @@
         <li>
             <i  class='bx bxs-calendar-check' ></i>
             <span class="text">
-						<h3>1020</h3>
-						<p>Прийнято заявок</p>
+						<h3>{{ $jobsCount }}</h3>
+						<p>Отримано заявок</p>
 					</span>
         </li>
         <li>
@@ -46,13 +46,12 @@
         <div class="order">
             <div class="head">
                 <h3>Отримані заявки</h3>
-                <i class='bx bx-search' ></i>
-                <i class='bx bx-filter' ></i>
+
             </div>
             <table>
                 <thead>
                 <tr>
-                    <th>Імя</th>
+                    <th>Імя та прізвище</th>
                     <th>Дата</th>
                     <th>Статус</th>
                 </tr>
@@ -60,36 +59,15 @@
                 <tbody>
                 <tr>
                     <td>
-                        <img src="{{ asset('img/people.png') }}">
-                        <p>Максим Батрак</p>
+                        <img src="{{ asset('img/avatar.jpg') }}">
+                        @foreach($sendingJobs as $sendingJob)
+                        <p>{{ $sendingJob->name . ' ' . $sendingJob->surname }}</p>
                     </td>
-                    <td>01-10-2021</td>
-                    <td><span class="status completed">Розглянуто</span></td>
+                    <td>{{ $sendingJob->created_at }}</td>
+                    <td><span class="status completed">Отримано заявку</span></td>
+                    @endforeach
                 </tr>
-                <tr>
-                    <td>
-                        <img src="{{ asset('img/people.png') }}">
-                        <p>Ілля Долбня</p>
-                    </td>
-                    <td>01-10-2021</td>
-                    <td><span class="status pending">Очікування</span></td>
-                </tr>
-                <tr>
-                    <td>
-                        <img src="{{ asset('img/people.png') }}">
-                        <p>Олександр Ткаченко</p>
-                    </td>
-                    <td>01-10-2021</td>
-                    <td><span class="status process">Обробка</span></td>
-                </tr>
-                <tr>
-                    <td>
-                        <img src="{{ asset('img/people.png') }}">
-                        <p>Рома Збутевич</p>
-                    </td>
-                    <td>01-10-2021</td>
-                    <td><span class="status pending">Очікування</span></td>
-                </tr>
+
 
                 </tbody>
 
