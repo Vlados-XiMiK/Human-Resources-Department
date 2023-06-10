@@ -32,7 +32,7 @@
 </ul>
 <ul class="side-menu">
     <li>
-        <a href="#">
+        <a href="{{ route('admin.sendingJob.index') }}">
             <i class='bx bxs-cog' ></i>
             <span class="text">Отримані заявки</span>
         </a>
