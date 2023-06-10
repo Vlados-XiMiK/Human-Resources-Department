@@ -1,8 +1,5 @@
 <?php
 
-use App\Http\Controllers\HomeController;
-use App\Models\User;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 
@@ -104,15 +101,4 @@ Route::group(['namespace' => 'App\Http\Controllers\Admin', 'prefix' => 'admin', 
 
 Auth::routes(['verify' => true]);
 
-Route::get('/home', function () {
-    if (Auth::check()) {
-        $user = Auth::user();
-        if ($user->role == User::ROLE_ADMIN) {
-            return redirect()->route('admin.main.index');
-        }
-    }
-
-    $homeController = new HomeController();
-    return $homeController->index();
-})->name('home');
-
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

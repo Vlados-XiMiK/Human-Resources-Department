@@ -107,10 +107,10 @@ h6 {
     box-sizing: content-box;
 }
 ._ibg{
-  position: relative;
+  position: relative; 
 }
 ._ibg img{
-  position: absolute;
+  position: absolute; 
   width: 100%;
   height: 100%;
   top: 0;
@@ -208,7 +208,7 @@ padding: 5px 0;
   display: flex;
 }
 .menu__item{
-
+  
 }
 .menu__item:not(:last-child){
   margin: 0px 21px 0px 0px;
@@ -293,12 +293,12 @@ padding: 5px 0;
 @media (max-width: 540px){
   .login{
     font-size: 10px;
-
+  
   }
   .menu__link{
     width: 200px;
     height: 30px;
-
+    
   }
 
 }
@@ -475,7 +475,7 @@ padding: 5px 0;
 
 }
 
-
+  
 
 
 /*-----------FOOTER------------------------------------------------------------------------------------------------------------------------------------ */
@@ -498,7 +498,7 @@ padding: 5px 0;
 display: flex;
 }
 .footer-menu__item{
-
+ 
 }
 .footer-menu__item:not(:last-child){
   margin: 0px 10px 0px 0px;
@@ -513,6 +513,7 @@ display: flex;
   text-align: center;
   margin-right: 25px;
   text-align: center;
+  position: center;
   line-height: 24px;
   transition: color 0.3s linear;
 }
@@ -633,13 +634,14 @@ display: flex;
 }
 .main-block__body > *:not(:last-child){
   margin: 0px 0px 35px 0px;
-
+  
 }
 .main-block__title{
   font-family: "Montserrat", sans-serif;
   font-weight: 600;
   font-size: 58px;
   text-align: center;
+  position: center;
   color: #609fff;
   line-height: 100%;
   margin: 100px 0px 100px 0px;
@@ -665,7 +667,7 @@ display: flex;
   display: flex;
   flex-wrap: wrap;
   margin-right: 20px;
-  margin-left: 0px;
+  margin-left: 0px; 
   justify-content: center;
 }
 .about-posts-section{
@@ -687,10 +689,24 @@ display: flex;
 }
 
 
-.about-posts-section{
-    margin: 20px 0;
+@media (min-width: 1550px) {
+  .about-posts:nth-of-type(3n) {
+    margin-right: 0;
+  }
+  .about-posts{
+    margin-left: 0px;
+  }
 }
-
+@media (max-width: 1549px) {
+  .about-posts{
+    margin-left: 130px;
+  }
+}
+@media (max-width: 1310px) {
+  .about-posts{
+    margin-left: 130px;
+  }
+}
 
 .about-post-thumbnail-wrapper {
   height: 400px;
@@ -746,7 +762,7 @@ transition: transform 0.3s ease-in-out; }
   }
 }
 .main-block__image{
-  position: absolute;
+  position: absolute; 
   width: 100%;
   height: 100%;
   top: 0;
