@@ -21,9 +21,9 @@
                                     <img src="{{ 'storage/' . $post->main_image }}" alt="фото">
                                 </div>
 
-                                <p class="about-post-category">{{ $post->category->title }}</p>
+                                <p class="about-post-category">{{ $post->category }}</p>
                                 <a class="about-post-permalink">
-                                  
+
                                     <h6 class="about-post-title">{{ $post->title }}</h6>
                                 </a>
                             </div>

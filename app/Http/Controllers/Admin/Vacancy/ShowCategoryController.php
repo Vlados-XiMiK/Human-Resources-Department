@@ -11,6 +11,7 @@ class ShowCategoryController extends Controller
 {
     public function __invoke(CategoryJob $category_job)
     {
+
         return view('admin.vacancy.category.show', compact('category_job'));
     }
 }

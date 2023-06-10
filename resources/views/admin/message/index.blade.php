@@ -1,5 +1,7 @@
 @extends('admin.layouts.main')
-
+@section('links')
+    <link rel="stylesheet" href="{{ asset('css/admin/table-style.css') }}">
+@endsection
 @section('content')
     <!-- MAIN -->
 <main>
@@ -22,52 +24,43 @@
 
 
     </div>
-    <div class="row">
-        <div class="col-20">
 
-            <div class="table-responsive">
-                <table class="table">
-                    <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Ім'я</th>
-                        <th>Номер телефону</th>
-                        <th>Електронна пошта</th>
-                        <th>Тема</th>
-                        <th colspan="2">Дія</th>
+    <table class="container" style="margin-top: 50px">
+        <thead>
+        <tr>
+            <th><h1>ID</h1></th>
+            <th><h1>Ім'я</h1></th>
+            <th><h1>Номер телефону</h1></th>
+            <th><h1>Електронна пошта</h1></th>
+            <th><h1>Тема</h1></th>
+            <th colspan="3"><h1>Дія</h1></th>
 
-                    </tr>
-                    </thead>
-                    <tbody>
-                    @foreach($contacts as $contact)
-                        <tr>
-                            <td>{{ $contact->id }}</td>
-                            <td>{{ $contact->name }}</td>
-                            <td>{{ $contact->number }}</td>
-                            <td>{{ $contact->mail }}</td>
-                            <td>{{ $contact->title }}</td>
-                            <td><a href="{{ route('admin.Contact.show', $contact->id) }}"><i class="fa-solid fa-eye" style="color: #024bca;"></i></a></td>
-                            <td>
-                                <form id="deleteForm{{ $contact->id }}" action="{{ route('admin.Contact.delete', $contact->id) }}" method="POST">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="button" style="border-radius: 0; border-color: transparent" onclick="confirmDelete({{ $contact->id }})">
-                                        <i class="fa-solid fa-trash-can" style="color: red"></i>
-                                    </button>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach($contacts as $contact)
+        <tr>
+            <td>{{ $contact->id }}</td>
+            <td>{{ $contact->name }}</td>
+            <td>{{ $contact->number }}</td>
+            <td>{{ $contact->mail }}</td>
+            <td>{{ $contact->title }}</td>
+            <td><a href="{{ route('admin.Contact.show', $contact->id) }}"><i class="fa-solid fa-eye text-color" style="color: #024bca;"></i></a></td>
+            <td>
+                <form action="{{ route('admin.Contact.delete', $contact->id) }}" method="POST" id="deleteForm{{ $contact->id }}">
+                    @csrf
+                    @method('DELETE')
+                    <button type="button" style="border-radius: 0; border-color: black" onclick="confirmDelete('{{ $contact->id }}')">
+                        <i class="fa-solid fa-trash-can" style="color: red"></i>
+                    </button>
+                </form>
+            </td>
 
-                                </form>
-                            </td>
+        </tr>
+        @endforeach
+        </tbody>
+    </table>
 
-                        </tr>
-                    @endforeach
-
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
-
-    <div style="margin-bottom: 200px;"></div>
 
 </main>
 

@@ -27,13 +27,17 @@
 
             <div style="display: flex; justify-content: space-around">
 
-            <div class="table-responsive">
-                <h3 style="color: white; margin-top: 10px; text-align: center">Список користувачів</h3>
-                <table class="table">
+
+
+                <div class="table-responsive">
+                    <h3 style="color: white; margin-top: 10px; text-align: center">Список користувачів</h3>
+
+                        <div class="table-container" style="max-height: 430px;">
+                <table class="table" style="width: 1000px; ">
                     <thead>
                     <tr>
                         <th>ID</th>
-                        <th>Назва</th>
+                        <th>Логін</th>
                         <th colspan="3">Дія</th>
                     </tr>
                     </thead>
@@ -65,10 +69,14 @@
             </div>
         </div>
     </div>
-
+</div>
     <div style="margin-bottom: 200px;"></div>
 
 </main>
+
+    <style>
+
+    </style>
 
     <script>
         function confirmDelete(category_jobId) {

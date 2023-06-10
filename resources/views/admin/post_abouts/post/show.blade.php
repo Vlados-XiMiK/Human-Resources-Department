@@ -43,7 +43,7 @@
 
                             <div class="selectbox">
                                 <select class="form-select" id="category" name="category" disabled>
-                                    <option value="">{{ $post->category->title }}</option>
+                                    <option value="">{{ $category }}</option>
                                 </select>
                             </div>
                             <a class="button" href="{{ route('admin.post.edit', $post->id) }}">Змінити пост</a>

@@ -13,6 +13,7 @@ class ShowController extends BaseController
     public function __invoke(Job $job)
     {
         $category_jobs = CategoryJob::all();
-        return view('admin.vacancy.post.show', compact('job', 'category_jobs'));
+        $categoryTitle = $job->category_job ? $job->category_job->title : "Без категорії";
+        return view('admin.vacancy.post.show', compact('job', 'category_jobs','categoryTitle'));
     }
 }

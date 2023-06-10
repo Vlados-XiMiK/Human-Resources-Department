@@ -30,20 +30,7 @@
 
 
         </div>
-        <!--
-                                <td><a href="{{ route('admin.job.edit', $job->id) }}"><i class="fa-solid fa-pencil" style="color: #024bca;"></i></a></td>
-                                <td>
-                                    <form action="{{ route('admin.job.delete', $job->id) }}" method="POST" id="deleteForm{{ $job->id }}">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button type="button" style="border-radius: 0; border-color: transparent" onclick="Delete('{{ $job->id }}')">
-                                            <i class="fa-solid fa-trash-can" style="color: red"></i>
-                                        </button>
-                                    </form>
-                                </td>
 
-                            <img src="{{ url('storage/' . $job->preview_image) }}" alt="main_image" style="width: 300px; height: 300px;">
-        -->
         <section>
             <div class="form-box">
 
@@ -74,7 +61,7 @@
                             <div class="formRight">
                                 <div class="selectbox">
                                     <select class="form__info" id="category" name="category_id" disabled>
-                                        <option value="">{{ $job->category_job->title }}</option>
+                                        <option value="">{{ $categoryTitle }}</option>
                                     </select>
                                 </div>
                                 <div class="preview__image" style="align-items: center; justify-content: center; display: flex">

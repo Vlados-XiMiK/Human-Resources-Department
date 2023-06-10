@@ -47,7 +47,24 @@ body {
 }
 
 
+.table-container {
+    max-height: 470px;
+    overflow-y: scroll;
+    scrollbar-width: thin;
+    scrollbar-color: transparent transparent;
+}
 
+.table-container::-webkit-scrollbar {
+    width: 0.5em;
+}
+
+.table-container::-webkit-scrollbar-thumb {
+    background-color: transparent;
+}
+
+.table-container::-webkit-scrollbar-track {
+    background-color: transparent;
+}
 
 
 /* SIDEBAR */
@@ -456,7 +473,7 @@ body {
 
 .table{
     margin-top: 25px;
-    width: 500px;
+    width: 700px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     border-collapse: collapse;
     white-space: nowrap;

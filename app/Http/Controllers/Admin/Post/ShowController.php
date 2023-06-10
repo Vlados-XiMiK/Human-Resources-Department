@@ -13,6 +13,7 @@ class ShowController extends BaseController
     public function __invoke(PostAbout $post)
     {
         $categories = Category::all();
-        return view('admin.post_abouts.post.show', compact('post', 'categories'));
+        $category = $post->category ? $post->category->title : 'Без категорії';
+        return view('admin.post_abouts.post.show', compact('post', 'categories', 'category'));
     }
 }

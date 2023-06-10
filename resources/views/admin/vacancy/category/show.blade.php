@@ -1,4 +1,7 @@
 @extends('admin.layouts.main')
+@section('links')
+    <link rel="stylesheet" href="{{ asset('css/admin/table-style.css') }}">
+@endsection
 @section('content')
     <!-- MAIN -->
     <main>
@@ -7,60 +10,52 @@
         </style>
         <div class="head-title">
             <div class="left">
-                <h1>{{ $category_job->title }}</h1>
+                <h1>Інформація про категорію</h1>
                 <ul class="breadcrumb">
                     <li>
                         <a class="active" href="{{ route('admin.Vacancy.index') }}">Вакансії</a>
                     </li>
 
-                    <li><i class='bx bx-chevron-right' ></i></li>
                     <li>
-                        <a class="active" href="{{ route('admin.main.index') }}">Головна</a>
-
+                        <a href="#" >-></a>
+                    </li>
+                    <li>
+                        <a href="#">Категорії</a>
                     </li>
                 </ul>
             </div>
 
 
         </div>
-        <div class="row">
-            <div class="col-12">
 
-                <div class="table-responsive">
-                    <table class="table">
+        <table class="container" style="margin-top: 50px">
+            <thead>
+            <tr>
+                <th><h1>ID категорії</h1></th>
+                <th><h1>Назва категорії</h1></th>
+                <th colspan="2"><h1>Дія</h1></th>
 
-                        <tbody>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>{{ $category_job->id }}</td>
+                <td class="text-color">{{ $category_job->title }}</td>
+                <td><a href="{{ route('admin.Vacancy.categories.edit', $category_job->id) }}"><i class="fa-solid fa-pencil text-color" style="color: #024bca;"></i></a></td>
+                <td>
+                    <form action="{{ route('admin.Vacancy.categories.delete', $category_job->id) }}" method="POST" id="deleteForm{{ $category_job->id }}">
+                        @csrf
+                        @method('DELETE')
+                        <button type="button" style="border-radius: 0; border-color: black" onclick="confirmDelete('{{ $category_job->id }}')">
+                            <i class="fa-solid fa-trash-can" style="color: red"></i>
+                        </button>
+                    </form>
+                </td>
 
-                            <tr>
-                                <td>ID</td>
-                                <td colspan="3">{{ $category_job->id }}</td>
+            </tr>
 
-                            </tr>
-                            <tr>
-                                <td>Назва</td>
-                                <td>{{ $category_job->title }}</td>
-                                <td><a href="{{ route('admin.Vacancy.categories.edit', $category_job->id) }}"><i class="fa-solid fa-pencil" style="color: #024bca;"></i></a></td>
-                                <td>
-                                    <form action="{{ route('admin.Vacancy.categories.delete', $category_job->id) }}" method="POST" id="deleteForm{{ $category_job->id }}">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button type="button" style="border-radius: 0; border-color: transparent" onclick="confirmDelete('{{ $category_job->id }}')">
-                                            <i class="fa-solid fa-trash-can" style="color: red"></i>
-                                        </button>
-                                    </form>
-                                </td>
-
-                            </tr>
-
-
-
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-
-        <div style="margin-bottom: 200px;"></div>
+            </tbody>
+        </table>
 
     </main>
 

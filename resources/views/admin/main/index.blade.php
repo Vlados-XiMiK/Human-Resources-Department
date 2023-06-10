@@ -25,7 +25,7 @@
 
     <ul class="box-info">
         <li>
-            <i class='bx bxs-calendar-check' ></i>
+            <i  class='bx bxs-calendar-check' ></i>
             <span class="text">
 						<h3>1020</h3>
 						<p>Прийнято заявок</p>

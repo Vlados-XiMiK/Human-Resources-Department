@@ -34,7 +34,7 @@
     <li>
         <a href="#">
             <i class='bx bxs-cog' ></i>
-            <span class="text">Налаштування</span>
+            <span class="text">Отримані заявки</span>
         </a>
     </li>
     <li>
