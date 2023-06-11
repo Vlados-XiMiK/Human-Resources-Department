@@ -12,7 +12,9 @@
                 <li>
                     <a href="#">Про нас</a>
                 </li>
-                <li><i class='bx bx-chevron-right' ></i></li>
+                <li>
+                    <a href="#">-></a>
+                </li>
                 <li>
                     <a class="active" href="{{ route('admin.main.index') }}">Головна</a>
                 </li>

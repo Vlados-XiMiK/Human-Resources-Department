@@ -12,6 +12,7 @@
     <script src="https://kit.fontawesome.com/c802f53a5e.js" crossorigin="anonymous"></script>
     <!-- Підключення стилів SweetAlert -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.17/dist/sweetalert2.min.css">
+    <link rel="icon" href="{{ asset('img/logo.png') }}" type="image/x-icon">
     @yield('links')
 
     <!-- Підключення скрипта SweetAlert -->

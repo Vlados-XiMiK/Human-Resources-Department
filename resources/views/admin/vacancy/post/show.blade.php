@@ -20,9 +20,12 @@
                         <a class="active" href="{{ route('admin.Vacancy.index') }}">Вакансії</a>
                     </li>
 
-                    <li><i class='bx bx-chevron-right' ></i></li>
                     <li>
-                        <a class="active" href="{{ route('admin.main.index') }}">Головна</a>
+                        <a href="">-></a>
+                    </li>
+
+                    <li>
+                        <a href="">Інформація про вакансію</a>
 
                     </li>
                 </ul>

@@ -7,14 +7,16 @@
     </style>
     <div class="head-title">
         <div class="left">
-            <h1>Користувачі</h1>
+            <h1>Редагування користувача</h1>
             <ul class="breadcrumb">
                 <li>
                     <a class="active" href="{{ route('admin.user.index') }}">Користувачі</a>
                 </li>
-                <li><i class='bx bx-chevron-right' ></i></li>
                 <li>
-                    <a class="active" href="{{ route('admin.main.index') }}">Головна</a>
+                    <a href="#">-></a>
+                </li>
+                <li>
+                    <a href="">Редагування користувача</a>
                 </li>
             </ul>
         </div>

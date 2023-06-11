@@ -10,11 +10,13 @@
             <h1>Про нас</h1>
             <ul class="breadcrumb">
                 <li>
-                    <a href="#">Про нас</a>
+                    <a class="active" href="{{ route('admin.About_us.index') }}">Розділ "Про нас"</a>
                 </li>
-                <li><i class='bx bx-chevron-right' ></i></li>
                 <li>
-                    <a class="active" href="{{ route('admin.main.index') }}">Головна</a>
+                    <a href="">-></a>
+                </li>
+                <li>
+                    <a href="">Створення категорії</a>
                 </li>
             </ul>
         </div>

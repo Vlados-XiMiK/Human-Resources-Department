@@ -13,9 +13,11 @@
                 <li>
                     <a class="active" href="{{ route('admin.sendingJob.index') }}">Отримані заявки</a>
                 </li>
-                <li><i class='bx bx-chevron-right' ></i></li>
                 <li>
-                    <a class="active" href="{{ route('admin.main.index') }}">Головна</a>
+                    <a href="#">-></a>
+                </li>
+                <li>
+                    <a href="">Інформація про заявку</a>
                 </li>
             </ul>
         </div>

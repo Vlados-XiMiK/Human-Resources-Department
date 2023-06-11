@@ -12,9 +12,11 @@
                 <li>
                     <a class="active" href="{{ route('admin.Contact.index') }}">Вхідні повідомлення</a>
                 </li>
-                <li><i class='bx bx-chevron-right' ></i></li>
                 <li>
-                    <a class="active" href="{{ route('admin.main.index') }}">Головна</a>
+                    <a href="#">-></a>
+                </li>
+                <li>
+                    <a href="">Вхідне повідомлення від {{ $contact->name }}</a>
                 </li>
             </ul>
         </div>

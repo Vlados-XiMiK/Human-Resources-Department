@@ -17,9 +17,11 @@
                         <a class="active" href="{{ route('admin.About_us.index') }}">Про нас</a>
                     </li>
 
-                    <li><i class='bx bx-chevron-right' ></i></li>
                     <li>
-                        <a class="active" href="{{ route('admin.main.index') }}">Головна</a>
+                        <a href="">-></a>
+                    </li>
+                    <li>
+                        <a href="">Інформація про пост</a>
 
                     </li>
                 </ul>

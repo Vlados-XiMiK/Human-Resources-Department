@@ -12,9 +12,11 @@
                 <li>
                     <a class="active" href="{{ route('admin.user.index') }}">Користувачі</a>
                 </li>
-                <li><i class='bx bx-chevron-right' ></i></li>
                 <li>
-                    <a class="active" href="{{ route('admin.main.index') }}">Головна</a>
+                    <a href="#">-></a>
+                </li>
+                <li>
+                    <a href="">Створення користувача</a>
                 </li>
             </ul>
         </div>

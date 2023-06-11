@@ -14,10 +14,10 @@
                 <li>
                     <a href="">Основна панель</a>
                 </li>
-                <li><i class='bx bx-chevron-right' ></i></li>
                 <li>
-                    <a class="active" href="{{ route('admin.main.index') }}">Головна</a>
+                    <a href="">-></a>
                 </li>
+
             </ul>
         </div>
 
@@ -46,8 +46,9 @@
         <div class="order">
             <div class="head">
                 <h3>Отримані заявки</h3>
-
+                <i id="filterIcon" class='bx bx-filter' ></i>
             </div>
+            <div style="overflow-y: scroll; max-height: 370px;">
             <table>
                 <thead>
                 <tr>
@@ -57,25 +58,57 @@
                 </tr>
                 </thead>
                 <tbody>
+                @foreach($sendingJobs as $sendingJob)
                 <tr>
                     <td>
                         <img src="{{ asset('img/avatar.jpg') }}">
-                        @foreach($sendingJobs as $sendingJob)
+
                         <p>{{ $sendingJob->name . ' ' . $sendingJob->surname }}</p>
                     </td>
-                    <td>{{ $sendingJob->created_at }}</td>
+                    <td>{{ $sendingJob->created_at->format('Y-m-d H:i:s') }}</td>
                     <td><span class="status completed">Отримано заявку</span></td>
-                    @endforeach
+
                 </tr>
 
-
+                @endforeach
                 </tbody>
 
             </table>
+                </div>
         </div>
 
     </div>
     <div style="margin-bottom: 200px;"></div>
 </main>
+
+    <script>
+        var filterIcon = document.getElementById('filterIcon');
+        var tableBody = document.querySelector('.order table tbody');
+        var rows = Array.from(tableBody.rows);
+        var ascending = true; // По умолчанию сортировка по возрастанию
+
+        filterIcon.addEventListener('click', function() {
+            rows.sort(function(a, b) {
+                var dateA = new Date(a.cells[1].innerText);
+                var dateB = new Date(b.cells[1].innerText);
+
+                if (ascending) {
+                    return dateA - dateB; // Сортировка по возрастанию
+                } else {
+                    return dateB - dateA; // Сортировка по убыванию
+                }
+            });
+
+            while (tableBody.firstChild) {
+                tableBody.removeChild(tableBody.firstChild);
+            }
+
+            rows.forEach(function(row) {
+                tableBody.appendChild(row);
+            });
+
+            ascending = !ascending; // Изменение порядка сортировки при каждом клике
+        });
+    </script>
     <!-- MAIN -->
 @endsection
