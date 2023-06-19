@@ -65,6 +65,7 @@
         function confirmDelete(sendingJobsId) {
             Swal.fire({
                 title: 'Ви впевнені?',
+                text: "Ви хочете видалити дану заявку?",
                 icon: 'warning',
                 showCancelButton: true,
                 confirmButtonColor: '#d33',

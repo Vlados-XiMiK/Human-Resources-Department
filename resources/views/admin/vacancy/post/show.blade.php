@@ -95,7 +95,7 @@
         function Delete(jobId) {
             Swal.fire({
                 title: "Ви впевнені?",
-                text: "Ви хочете видалити цей пост?",
+                text: "Ви хочете видалити дану вакансію?",
                 icon: "warning",
                 showCancelButton: true,
                 confirmButtonColor: "#d33",

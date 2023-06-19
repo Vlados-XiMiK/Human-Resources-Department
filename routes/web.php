@@ -24,8 +24,6 @@ Route::group(['namespace' => 'App\Http\Controllers\Main'], function () {
 
 });
 
-
-
 Route::group(['namespace' => 'App\Http\Controllers\Main'], function () {
     Route::get('/about','AboutPageController');
 });
@@ -121,10 +119,11 @@ Route::get('/home', function () {
         $user = Auth::user();
         if ($user->role == User::ROLE_ADMIN) {
             return redirect()->route('admin.main.index');
+        } else {
+            return view('home');
         }
     }
 
-    $homeController = new HomeController();
-    return $homeController->index();
-})->name('home');
+    return redirect()->route('login');
+})->name('home')->middleware('auth');
 

@@ -67,7 +67,7 @@
         function confirmDelete(category_jobId) {
             Swal.fire({
                 title: "Ви впевнені?",
-                text: "Ви хочете видалити цю категорію вакансій?",
+                text: "Ви хочете видалити даного користувача?",
                 icon: "warning",
                 showCancelButton: true,
                 confirmButtonColor: "#d33",

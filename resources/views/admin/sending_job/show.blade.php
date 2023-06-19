@@ -1,5 +1,6 @@
 @extends('admin.layouts.main')
 <link rel="stylesheet" href="{{ asset('css/admin/info_post.css') }}">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.all.min.js"></script>
 @section('content')
     <!-- MAIN -->
 <main>
@@ -26,7 +27,7 @@
 
     <section>
         <div class="form-box">
-            <form action="">
+            <div action="">
 
                 <h2>Інформація про заявку</h2>
                 <div class="formWrapper">
@@ -47,17 +48,18 @@
                             <input type="text" value="{{ $sendingJob->number }}" class="placeholder-color" readonly>
                         </div>
                         <a href="{{ route('sending-jobs.download', ['id' => $sendingJob->id]) }}" class="button">Завантажити резюме</a>
-                        <form action="{{ route('admin.sendingJob.delete', $sendingJob->id) }}" method="POST">
+                        <form id="deleteForm{{ $sendingJob->id }}" action="{{ route('admin.sendingJob.delete', $sendingJob->id) }}" method="POST">
                             @csrf
                             @method('DELETE')
-                            <button type="button" style="margin-top: 20px;" class="button">
-                                Видалити заявку
-                            </button>
                         </form>
+
+                        <button type="button" style="margin-top: 20px;" class="button" onclick="confirmDelete({{ $sendingJob->id }})">
+                            Видалити заявку
+                        </button>
 
                     </div>
                 </div>
-            </form>
+            </div>
         </div>
     </section>
 
